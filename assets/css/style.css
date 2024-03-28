@@ -25,7 +25,7 @@
 
   --bg-gradient-onyx: linear-gradient(
     to bottom right, 
-    hsl(240, 1%, 25%) 3%, 
+    hwb(240 25% 75%) 3%, 
     hsl(0, 0%, 19%) 97%
   );
   --bg-gradient-jet: linear-gradient(
@@ -35,7 +35,7 @@
   ), hsl(240, 2%, 13%);
   --bg-gradient-yellow-1: linear-gradient(
     to bottom right, 
-    hsl(45, 100%, 71%) 0%, 
+    rgb(255, 218, 107) 0%, 
     hsla(36, 100%, 69%, 0) 50%
   );
   --bg-gradient-yellow-2: linear-gradient(
@@ -50,24 +50,45 @@
   );
   --text-gradient-yellow: linear-gradient(
     to right, 
-    hsl(45, 100%, 72%), 
+    hsl(45, 100%, 72%),  /*gradient to:from*/
     hsl(35, 100%, 68%)
   );
 
-  /* solid */
+  /* solid 
+  tsukimi: 205,177,149
+  
+  */ 
+
+  --jet: hsl(0, 0%, 22%); /*panel outlines]*/
+  --onyx: hsl(240, 1%, 17%); /*Student @ UofM bg*/
+  --eerie-black-1: hsl(240, 2%, 13%); /*bg of icons*/
+  --eerie-black-2: hsl(240, 2%, 12%); /*bg of panels*/
+  --smoky-black: hsl(0, 0%, 7%);
+  --white-1: hsl(0, 0%, 100%);
+  --white-2: hsl(0, 0%, 98%);
+  --orange-yellow-crayola: rgb(255, 219, 112); /*general highlights*/
+  --vegas-gold: rgb(206, 177, 90); /*dates on resume*/
+  --light-gray: rgb(214, 214, 214);
+  --light-gray-70: hsla(0, 0%, 84%, 0.7);
+  --bittersweet-shimmer: hsl(0, 43%, 51%);
+  
+  
+  /*
+  original
+  
+  hsl(45, 100%, 72%)
+  hsl(35, 100%, 68%
 
   --jet: hsl(0, 0%, 22%);
   --onyx: hsl(240, 1%, 17%);
   --eerie-black-1: hsl(240, 2%, 13%);
   --eerie-black-2: hsl(240, 2%, 12%);
-  --smoky-black: hsl(0, 0%, 7%);
-  --white-1: hsl(0, 0%, 100%);
-  --white-2: hsl(0, 0%, 98%);
+
   --orange-yellow-crayola: hsl(45, 100%, 72%);
   --vegas-gold: hsl(45, 54%, 58%);
-  --light-gray: hsl(0, 0%, 84%);
-  --light-gray-70: hsla(0, 0%, 84%, 0.7);
-  --bittersweet-shimmer: hsl(0, 43%, 51%);
+  */
+
+
 
   /**
    * typography
@@ -729,34 +750,68 @@ main {
 .clients { margin-bottom: 15px; }
 
 .clients-list {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 15px;
-  margin: 0 -15px;
-  padding: 25px;
-  padding-bottom: 25px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
+  display: grid;
+  justify-content: center;
+  margin: 0 auto;
+  grid-template-columns: repeat(auto-fill, minmax(calc(10% - 10px), 1fr)); /* Adjust the size as needed */
+  gap: 20px; /* Adjust spacing between items */
+  margin: 0 -15px; /* Maintain or adjust according to layout */
+  padding: 25px 15px; /* Adjust padding as needed */
+  overflow-x: visible; /* Change or remove according to the overflow behavior */
+  scroll-behavior: smooths;
   overscroll-behavior-inline: contain;
-  scroll-snap-type: inline mandatory;
-  scroll-padding-inline: 25px;
 }
 
 .clients-item {
-  min-width: 50%;
   scroll-snap-align: start;
+  display: flex; /* Ensure items align properly */
+  justify-content: center; /* Center items within the cell if needed */
 }
 
+
 .clients-item img {
-  width: 100%;
-  filter: grayscale(1);
+  width: 100%; /* Shrink images to 50% of their container's width */
   transition: var(--transition-1);
+  display: block; /* Ensures the image is treated as a block-level element */
+  margin: 0 auto; /* Keeps the image centered within its container */
 }
+
+
 
 .clients-item img:hover { filter: grayscale(0); }
 
+.clients-overlay-container {
+  position: relative;
+  display: inline-block; /* Or flex depending on your layout */
+  text-align: center;
+  width: 100%;
+}
 
+.clients-overlay-container img {
+  width: 100%; /* Adjust if necessary */
+  transition: filter 0.5s ease; /* Smooth transition for the dimming effect */
+  display: block;
+}
+
+.clients-overlay-container:hover img {
+  filter: brightness(50%); /* Dim the image */
+}
+
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #FFF; /* Text color */
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.clients-overlay-container:hover .overlay-text {
+  visibility: visible;
+  opacity: 1;
+}
 
 
 
@@ -1010,13 +1065,14 @@ main {
 .project-item > a:hover img { transform: scale(1.1); }
 
 .project-title,
-.project-category { margin-left: 10px; }
+.project-category { margin-left: 0px; }
 
 .project-title {
   color: var(--white-2);
   font-size: var(--fs-5);
   font-weight: var(--fw-400);
   text-transform: capitalize;
+  text-align: center;
   line-height: 1.3;
 }
 
@@ -1427,7 +1483,10 @@ textarea.form-input::-webkit-resizer { display: none; }
     border-radius: 20px;
   }
 
-  .testimonials-avatar-box img { width: 80px; }
+  .testimonials-avatar-box img {
+    width: 80px; 
+    border-radius: 20px; 
+  }
 
   .testimonials-item-title {
     margin-bottom: 10px;
@@ -1463,7 +1522,10 @@ textarea.form-input::-webkit-resizer { display: none; }
     margin-bottom: 0;
   }
 
-  .modal-avatar-box img { width: 65px; }
+  .modal-avatar-box img { 
+    width: 65px;
+    border-radius: 20px;
+  }
 
   .modal-img-wrapper > img {
     display: block;
@@ -1471,15 +1533,15 @@ textarea.form-input::-webkit-resizer { display: none; }
     width: 35px;
   }
 
-  /* clients */
+  /* clients 
 
   .clients-list {
-    gap: 50px;
-    margin: 0 -30px;
-    padding: 45px;
-    scroll-padding-inline: 45px;
-  }
-
+    gap: 10px;
+    margin: 0 0px;
+    padding: 25px;
+    /* scroll-padding-inline: 45px; */
+  
+  */
   .clients-item { min-width: calc(33.33% - 35px); }
 
 
@@ -1879,4 +1941,171 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .timeline-text { max-width: 700px; }
 
+}
+
+
+
+/* portfolio modal */
+/**
+ * #project-modal
+ */
+
+ .project-modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto; /* Allows scrolling within the modal container */
+  overscroll-behavior: contain;
+  z-index: 1050; /* Ensure higher than testimonials if needed */
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.project-modal-container::-webkit-scrollbar { display: none; }
+
+.project-modal-container.active {
+  pointer-events: all;
+  visibility: visible;
+}
+
+.project-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5); /* Slightly lighter overlay */
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 1040; /* Ensure below modal content but above other content */
+  transition: opacity 0.3s ease;
+}
+
+.project-overlay.active {
+  opacity: 0.8;
+  visibility: visible;
+  pointer-events: all;
+}
+
+.project-modal {
+  background: var(--eerie-black-2); /* Adjusted for a different look */
+  position: relative;
+  padding: 40px;
+  margin: auto; /* Center the modal */
+  max-width: 70%; /* Increase the modal width if needed to accommodate larger image */
+  width: 40%; /* Adjust width to make the modal adapt based on content */
+  min-height: auto; /* Adjust min-height instead of height to allow for dynamic content resizing */
+  max-height: 90vh; /* Increase the modal height if needed, with respect to viewport */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centers content vertically in the flex container */
+  border: 1px solid #333;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  transform: translateY(-20px);
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: 1055; /* Ensure it's above the overlay */
+}
+
+.project-modal-container.active .project-modal {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.project-modal-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: var(--onyx);
+  border: none;
+  border-radius: 8px;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.project-modal-close-btn:hover {
+  opacity: 0.8;
+}
+
+.project-modal-close-btn ion-icon {
+  font-size: 24px;
+  color: white;
+}
+
+.project-avatar-box {
+  background: var(--eerie-black-2);
+  width: 80%; /* Or a specific px value */
+  height: auto; /* This can be changed to a specific height if you want to control the image container's size */
+  max-width: 600px; /* Example max-width */
+  max-height: 400px; /* Example max-height, adjust accordingly */
+  border-radius: 10%;
+  margin-top: 10px;
+  margin-bottom: 35px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* This ensures that anything exceeding the bounds of the container is hidden */
+}
+
+/* Adjustments for text alignment */
+.project-modal-content {
+  margin-top: 50px;
+  display: flex; /* Flexbox layout for the content container */
+  flex-direction: column; /* Stack items vertically */
+  align-items: flex-start; /* Align text to the left within the container */
+  width: 100%; /* Use full width of the container */
+  max-width: 600px; /* Match the width of the image container for alignment */
+  margin: 0 auto; /* Center the text container within the modal */
+}
+.project-modal-content h3 {
+  color: var(--white-2);
+}
+.project-modal-content h4, .project-modal-content p {
+  text-align: left; /* Left-aligns the text within the centered content container */
+  color: var(--light-gray);
+}
+
+[data-project-modal-img] {
+  width: 100%; /* Adjusts the width to fill the container */
+  height: auto; /* Adjusts the height automatically to maintain aspect ratio */
+  max-height: 100%; /* Ensures the image does not exceed the container's height */
+  object-fit: contain; /* Adjusts the image to fit within the container without cropping. Use 'cover' if you want it to cover the container fully */
+  border-radius: 10%;
+}
+.project-description {
+  margin-top: 50px;
+  display: none; /* Hide the description in the project list */
+}
+
+.project-skills {
+  display: none; /* Hide the description in the project list */
+  margin-top: 50px;
+}
+
+.skillsbuffer {
+  display: none; /* Hide the description in the project list */
+  margin-top: 50px;
+}
+
+/* Style for the canvas to cover the entire screen and act as a background */
+#particleCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Ensure it stays in the background */
 }
