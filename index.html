@@ -48,7 +48,29 @@
         <div class="info-content">
           <h1 class="name" title="Dylan Robles">Dylan Robles</h1>
 
-          <p class="title">Student @ UofM</p>
+          <!-- <p class="title">Student @ UofM</p> -->
+          <p class="title"><span id="typed" style="display: inline;"></span></p>
+          <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+          <script>
+            var typed = new Typed('#typed', {
+              strings: ['UofM <span class="gold-color">Student</span>', 
+                        'AI <span class="gold-color">Aficionado</span>', 
+                        'Content <span class="gold-color">Creator</span>',
+                        'Piano <span class="gold-color">Enthusiast</span>',
+                        'Ice Cream <span class="gold-color">Fanatic</span>',
+                        '<span class="gold-color">Polyglot</span>'],
+              typeSpeed: 50,
+              backSpeed: 50,
+              backDelay: 2000,
+              showCursor: true,
+              loop: true,
+              onComplete: function(){
+                showCursor: false
+              }
+            })
+            
+          </script>
+
         </div>
 
         <button class="info_more-btn" data-sidebar-btn>
@@ -685,6 +707,60 @@
 
           <ul class="clients-list has-scrollbar">
 
+            <a>
+              <div class="clients-overlay-container">
+                <img src="./assets/images/gitlogo.png" alt="git">
+                <div class="overlay-text">Git</div> <!-- The text you want to display on hover -->
+              </div>
+            </a>
+          </li>
+            <li class="clients-item">
+              <a>
+                <div class="clients-overlay-container">
+                  <img src="./assets/images/reactlogo.png" alt="react">
+                  <div class="overlay-text">React</div> <!-- The text you want to display on hover -->
+                </div>
+              </a>
+            </li>
+            <li class="clients-item">
+              <a>
+                <div class="clients-overlay-container">
+                  <img src="./assets/images/nodejslogo.png" alt="css">
+                  <div class="overlay-text">Node.js</div> <!-- The text you want to display on hover -->
+                </div>
+              </a>
+            </li>
+            <a>
+              <div class="clients-overlay-container">
+                <img src="./assets/images/typescriptlogo.png" alt="typescript">
+                <div class="overlay-text">Typescript</div> <!-- The text you want to display on hover -->
+              </div>
+            </a>
+            <li class="clients-item">
+              <a>
+                <div class="clients-overlay-container">
+                  <img src="./assets/images/jslogo.png" alt="javascript">
+                  <div class="overlay-text">Javascript</div> <!-- The text you want to display on hover -->
+                </div>
+              </a>
+            </li>
+            <li class="clients-item">
+              <a>
+                <div class="clients-overlay-container">
+                  <img src="./assets/images/htmllogo.png" alt="html">
+                  <div class="overlay-text">HTML</div> <!-- The text you want to display on hover -->
+                </div>
+              </a>
+            </li>
+            <li class="clients-item">
+              <a>
+                <div class="clients-overlay-container">
+                  <img src="./assets/images/csslogo.png" alt="css">
+                  <div class="overlay-text">CSS</div> <!-- The text you want to display on hover -->
+                </div>
+              </a>
+            </li>
+
             <li class="clients-item">
               <a>
                 <div class="clients-overlay-container">
@@ -712,28 +788,19 @@
             <li class="clients-item">
               <a>
                 <div class="clients-overlay-container">
-                  <img src="./assets/images/jslogo.png" alt="javascript">
-                  <div class="overlay-text">Javascript</div> <!-- The text you want to display on hover -->
+                  <img src="./assets/images/mongodblogo.png" alt="mongodb">
+                  <div class="overlay-text">MongoDB</div> <!-- The text you want to display on hover -->
                 </div>
               </a>
             </li>
             <li class="clients-item">
               <a>
                 <div class="clients-overlay-container">
-                  <img src="./assets/images/htmllogo.png" alt="html">
-                  <div class="overlay-text">HTML</div> <!-- The text you want to display on hover -->
+                  <img src="./assets/images/blenderlogo.png" alt="blender">
+                  <div class="overlay-text">Blender</div> <!-- The text you want to display on hover -->
                 </div>
               </a>
             </li>
-            <li class="clients-item">
-              <a>
-                <div class="clients-overlay-container">
-                  <img src="./assets/images/csslogo.png" alt="css">
-                  <div class="overlay-text">CSS</div> <!-- The text you want to display on hover -->
-                </div>
-              </a>
-            </li>
-            <li class="clients-item">
               <a>
                 <div class="clients-overlay-container">
                   <img src="./assets/images/after effects.png" alt="after effects">

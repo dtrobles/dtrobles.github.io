@@ -237,7 +237,7 @@ document.addEventListener('DOMContentLoaded', function() {
       let y = Math.random() * (innerHeight - size * 2) + size;
       let directionX = (Math.random() * .4) - .2;
       let directionY = (Math.random() * .4) - .2;
-      let color = '#d6d6d6';
+      let color = (i % 5 == 4) ? '#ffdb70' : '#d6d6d6';
 
       particles.push({
         x,
@@ -286,3 +286,4 @@ document.addEventListener('DOMContentLoaded', function() {
     initParticles();
   });
 });
+

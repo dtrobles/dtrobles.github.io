@@ -150,7 +150,7 @@ a { text-decoration: none; }
 
 li { list-style: none; }
 
-img, ion-icon, a, button, time, span { display: block; }
+img, ion-icon, a, button, time { display: block; }
 
 button {
   font: inherit;
@@ -753,10 +753,10 @@ main {
   display: grid;
   justify-content: center;
   margin: 0 auto;
-  grid-template-columns: repeat(auto-fill, minmax(calc(10% - 10px), 1fr)); /* Adjust the size as needed */
+  grid-template-columns: repeat(9, 1fr); /* Adjust the size as needed */
   gap: 20px; /* Adjust spacing between items */
-  margin: 0 -15px; /* Maintain or adjust according to layout */
-  padding: 25px 15px; /* Adjust padding as needed */
+  margin: 0 35px; /* Maintain or adjust according to layout */
+  padding: 15px 0px; /* Adjust padding as needed */
   overflow-x: visible; /* Change or remove according to the overflow behavior */
   scroll-behavior: smooths;
   overscroll-behavior-inline: contain;
@@ -2108,4 +2108,20 @@ textarea.form-input::-webkit-resizer { display: none; }
   width: 100%;
   height: 100%;
   z-index: -1; /* Ensure it stays in the background */
+}
+
+#typed{
+  font-size: 15px;
+  text-align: center;
+  color: lightgray;
+}
+.typed-cursor {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  color: lightgray; /* Cursor color */
+  opacity: 1;
+  /* Other styles as needed */
+}
+.gold-color{
+  color: var(--orange-yellow-crayola)
 }
