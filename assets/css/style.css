@@ -749,31 +749,61 @@ main {
 
 .clients { margin-bottom: 15px; }
 
+.clients-item {
+  width: 100%;
+  transition: var(--transition-1);
+  display: block;
+  margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+  .clients-item {
+    width: 80%; /* Adjust as needed */
+  }
+}
+
+@media (max-width: 768px) {
+  .clients-item {
+    width: 70%; /* Adjust as needed */
+  }
+}
+
+@media (max-width: 480px) {
+  .clients-item {
+    width: 60%; /* Adjust as needed */
+  }
+}
+
 .clients-list {
   display: grid;
   justify-content: center;
   margin: 0 auto;
-  grid-template-columns: repeat(9, 1fr); /* Adjust the size as needed */
-  gap: 20px; /* Adjust spacing between items */
-  margin: 0 35px; /* Maintain or adjust according to layout */
-  padding: 15px 0px; /* Adjust padding as needed */
-  overflow-x: visible; /* Change or remove according to the overflow behavior */
-  scroll-behavior: smooths;
-  overscroll-behavior-inline: contain;
+  grid-template-columns: repeat(9, 1fr); /* Default: 9 columns */
+  gap: 20px; /* Spacing between items */
+  padding: 15px 0px;
+}
+
+@media (max-width: 1024px) {
+  .clients-list {
+    grid-template-columns: repeat(6, 1fr); /* 6 columns for medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .clients-list {
+    grid-template-columns: repeat(4, 1fr); /* 4 columns for small screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .clients-list {
+    grid-template-columns: repeat(4, 1fr); /* 2 columns for mobile screens */
+  }
 }
 
 .clients-item {
-  scroll-snap-align: start;
-  display: flex; /* Ensure items align properly */
-  justify-content: center; /* Center items within the cell if needed */
-}
-
-
-.clients-item img {
-  width: 100%; /* Shrink images to 50% of their container's width */
-  transition: var(--transition-1);
-  display: block; /* Ensures the image is treated as a block-level element */
-  margin: 0 auto; /* Keeps the image centered within its container */
+  display: flex;
+  justify-content: center;
 }
 
 
@@ -994,6 +1024,19 @@ main {
   margin-bottom: 10px;
 }
 
+/* Responsive Grid Layout */
+@media (min-width: 768px) {
+  .project-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .project-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 .project-item { display: none; }
 
 .project-item.active {
@@ -1065,7 +1108,10 @@ main {
 .project-item > a:hover img { transform: scale(1.1); }
 
 .project-title,
-.project-category { margin-left: 0px; }
+.project-category { 
+  height: 70%;
+  margin-left: 0px; 
+}
 
 .project-title {
   color: var(--white-2);
@@ -1081,7 +1127,6 @@ main {
   font-size: var(--fs-6);
   font-weight: var(--fw-300);
 }
-
 
 
 
@@ -1959,9 +2004,9 @@ textarea.form-input::-webkit-resizer { display: none; }
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow-y: auto; /* Allows scrolling within the modal container */
+  overflow-y: auto;
   overscroll-behavior: contain;
-  z-index: 1050; /* Ensure higher than testimonials if needed */
+  z-index: 1050;
   pointer-events: none;
   visibility: hidden;
 }
@@ -1973,17 +2018,18 @@ textarea.form-input::-webkit-resizer { display: none; }
   visibility: visible;
 }
 
+
 .project-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.5); /* Slightly lighter overlay */
+  background: rgba(0, 0, 0, 0.5);
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  z-index: 1040; /* Ensure below modal content but above other content */
+  z-index: 1040;
   transition: opacity 0.3s ease;
 }
 
@@ -1994,24 +2040,23 @@ textarea.form-input::-webkit-resizer { display: none; }
 }
 
 .project-modal {
-  background: var(--eerie-black-2); /* Adjusted for a different look */
+  background: var(--eerie-black-2);
   position: relative;
-  padding: 40px;
-  margin: auto; /* Center the modal */
-  max-width: 70%; /* Increase the modal width if needed to accommodate larger image */
-  width: 40%; /* Adjust width to make the modal adapt based on content */
-  min-height: auto; /* Adjust min-height instead of height to allow for dynamic content resizing */
-  max-height: 90vh; /* Increase the modal height if needed, with respect to viewport */
+  padding: 20px;
+  margin: auto;
+  width: 90%;
+  max-width: 600px;
+  min-height: auto;
+  max-height: 90vh;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Centers content vertically in the flex container */
   border: 1px solid #333;
   border-radius: 8px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
   transform: translateY(-20px);
   opacity: 0;
   transition: all 0.3s ease;
-  z-index: 1055; /* Ensure it's above the overlay */
+  z-index: 1055;
 }
 
 .project-modal-container.active .project-modal {
@@ -2046,10 +2091,9 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 .project-avatar-box {
   background: var(--eerie-black-2);
-  width: 80%; /* Or a specific px value */
-  height: auto; /* This can be changed to a specific height if you want to control the image container's size */
-  max-width: 600px; /* Example max-width */
-  max-height: 400px; /* Example max-height, adjust accordingly */
+  width: 100%;
+  max-width: 600px;
+  height: auto;
   border-radius: 10%;
   margin-top: 10px;
   margin-bottom: 35px;
@@ -2057,49 +2101,75 @@ textarea.form-input::-webkit-resizer { display: none; }
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden; /* This ensures that anything exceeding the bounds of the container is hidden */
+  overflow: hidden;
 }
 
-/* Adjustments for text alignment */
 .project-modal-content {
-  margin-top: 50px;
-  display: flex; /* Flexbox layout for the content container */
-  flex-direction: column; /* Stack items vertically */
-  align-items: flex-start; /* Align text to the left within the container */
-  width: 100%; /* Use full width of the container */
-  max-width: 600px; /* Match the width of the image container for alignment */
-  margin: 0 auto; /* Center the text container within the modal */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
 }
 .project-modal-content h3 {
   color: var(--white-2);
+  font-size: 20px;
 }
-.project-modal-content h4, .project-modal-content p {
+.project-modal-content p {
+  font-size: 14px;
+  color: var(--light-gray);
+}
+.project-modal-content h4  {
   text-align: left; /* Left-aligns the text within the centered content container */
   color: var(--light-gray);
 }
 
 [data-project-modal-img] {
-  width: 100%; /* Adjusts the width to fill the container */
-  height: auto; /* Adjusts the height automatically to maintain aspect ratio */
-  max-height: 100%; /* Ensures the image does not exceed the container's height */
-  object-fit: contain; /* Adjusts the image to fit within the container without cropping. Use 'cover' if you want it to cover the container fully */
+  width: 70%;
+  height: auto;
+  max-height: 100%;
+  object-fit: contain;
   border-radius: 10%;
 }
-.project-description {
-  margin-top: 50px;
-  display: none; /* Hide the description in the project list */
+.project-modal-content i {
+  font-size: 12px;
 }
-
-.project-skills {
-  display: none; /* Hide the description in the project list */
-  margin-top: 50px;
-}
-
 .skillsbuffer {
-  display: none; /* Hide the description in the project list */
-  margin-top: 50px;
+  height: 10%;
+}
+.project-description, .project-skills {
+  display: none;
+}
+@media (max-width: 768px) {
+  .project-modal-content p {
+    font-size: 12px; /* Adjust this value as needed */
+  }
 }
 
+@media (max-width: 480px) {
+  .project-modal-content p {
+    font-size: 12px; /* Further adjust for very small screens */
+  }
+}
+@media (max-width: 768px) {
+  .project-modal {
+    padding: 10px;
+    width: 95%;
+    max-width: 400px;
+  }
+
+  .project-modal-content h3, .project-modal-content h4 {
+    font-size: 14px;
+  }
+
+  .project-modal-close-btn {
+    top: 5px;
+    right: 5px;
+    width: 30px;
+    height: 30px;
+  }
+}
 /* Style for the canvas to cover the entire screen and act as a background */
 #particleCanvas {
   position: fixed;

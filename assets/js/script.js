@@ -55,63 +55,63 @@ overlay.addEventListener("click", testimonialsModalFunc);
 
 
 
-// custom select variables
-const select = document.querySelector("[data-select]");
-const selectItems = document.querySelectorAll("[data-select-item]");
-const selectValue = document.querySelector("[data-selecct-value]");
-const filterBtn = document.querySelectorAll("[data-filter-btn]");
+// // custom select variables
+// const select = document.querySelector("[data-select]");
+// const selectItems = document.querySelectorAll("[data-select-item]");
+// const selectValue = document.querySelector("[data-selecct-value]");
+// const filterBtn = document.querySelectorAll("[data-filter-btn]");
 
-select.addEventListener("click", function () { elementToggleFunc(this); });
+// select.addEventListener("click", function () { elementToggleFunc(this); });
 
-// add event in all select items
-for (let i = 0; i < selectItems.length; i++) {
-  selectItems[i].addEventListener("click", function () {
+// // add event in all select items
+// for (let i = 0; i < selectItems.length; i++) {
+//   selectItems[i].addEventListener("click", function () {
 
-    let selectedValue = this.innerText.toLowerCase();
-    selectValue.innerText = this.innerText;
-    elementToggleFunc(select);
-    filterFunc(selectedValue);
+//     let selectedValue = this.innerText.toLowerCase();
+//     selectValue.innerText = this.innerText;
+//     elementToggleFunc(select);
+//     filterFunc(selectedValue);
 
-  });
-}
+//   });
+// }
 
-// filter variables
-const filterItems = document.querySelectorAll("[data-filter-item]");
+// // filter variables
+// const filterItems = document.querySelectorAll("[data-filter-item]");
 
-const filterFunc = function (selectedValue) {
+// const filterFunc = function (selectedValue) {
 
-  for (let i = 0; i < filterItems.length; i++) {
+//   for (let i = 0; i < filterItems.length; i++) {
 
-    if (selectedValue === "all") {
-      filterItems[i].classList.add("active");
-    } else if (selectedValue === filterItems[i].dataset.category) {
-      filterItems[i].classList.add("active");
-    } else {
-      filterItems[i].classList.remove("active");
-    }
+//     if (selectedValue === "all") {
+//       filterItems[i].classList.add("active");
+//     } else if (selectedValue === filterItems[i].dataset.category) {
+//       filterItems[i].classList.add("active");
+//     } else {
+//       filterItems[i].classList.remove("active");
+//     }
 
-  }
+//   }
 
-}
+// }
 
-// add event in all filter button items for large screen
-let lastClickedBtn = filterBtn[0];
+// // add event in all filter button items for large screen
+// let lastClickedBtn = filterBtn[0];
 
-for (let i = 0; i < filterBtn.length; i++) {
+// for (let i = 0; i < filterBtn.length; i++) {
 
-  filterBtn[i].addEventListener("click", function () {
+//   filterBtn[i].addEventListener("click", function () {
 
-    let selectedValue = this.innerText.toLowerCase();
-    selectValue.innerText = this.innerText;
-    filterFunc(selectedValue);
+//     let selectedValue = this.innerText.toLowerCase();
+//     selectValue.innerText = this.innerText;
+//     filterFunc(selectedValue);
 
-    lastClickedBtn.classList.remove("active");
-    this.classList.add("active");
-    lastClickedBtn = this;
+//     lastClickedBtn.classList.remove("active");
+//     this.classList.add("active");
+//     lastClickedBtn = this;
 
-  });
+//   });
 
-}
+// }
 
 
 
@@ -193,11 +193,12 @@ projectItems.forEach(item => {
     const descriptionElement = this.querySelector(".project-description");
     const skillsElement = this.querySelector(".project-skills");
     const skillsBuffer = this.querySelector(".skillsbuffer");
-    const projectUrl = this.getAttribute("data-project-url"); // Retrieve the URL
+    const projectUrl = this.getAttribute("data-project-url");
 
     projectModalImg.src = imgElement.src;
     projectModalImg.alt = imgElement.alt;
-    projectModalTitle.innerHTML = `${titleElement.innerText} <a href="${projectUrl}" target="_blank" style="text-decoration:none; display:inline-flex; align-items:center;">🔗</a>`;
+    projectModalTitle.innerHTML = `${titleElement.innerText} <a href="#" onclick="openContactForm('${projectUrl}'); return false;" style="text-decoration:none; display:inline-flex; align-items:center;">🔗</a>`;
+    console.log(projectUrl);
     projectModalText.innerHTML = `<p>${categoryElement.innerText}</p>` + 
     (descriptionElement ? `<p>${descriptionElement.innerText}</p>` : '') + 
     (skillsBuffer && skillsBuffer.innerText.trim() ? `<p>${skillsBuffer.innerText}</p>` : '<p><br></p>') +
@@ -287,3 +288,32 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+function triggerContactForm(element) {
+  const projectUrl = element.closest('.project-item').getAttribute("data-project-url");
+  // Extract function name and parameters from the string
+  const [functionName, params] = projectUrl.match(/([^(]+)\(([^)]+)\)/).slice(1, 3);
+  const paramList = params.split(',').map(param => param.trim().replace(/^'(.*)'$/, '$1')); // remove quotes and trim spaces
+  // Call the function with the extracted parameters
+  window[functionName](...paramList);
+}
+
+function openContactForm(body) {
+  toggleProjectModal();
+  pages[3].classList.add("active");
+  navigationLinks[3].classList.add("active");
+
+  pages[2].classList.remove("active");
+  navigationLinks[2].classList.remove("active");
+
+  // Set form values
+  document.querySelector('.contact-form textarea[name="message"]').value = body;
+
+  // Switch to the Contact tab
+  document.querySelectorAll("[data-page]").forEach(page => page.classList.remove("active"));
+  document.getElementById("contact-section").classList.add("active");
+  
+  document.querySelectorAll('.about, .resume, .portfolio, .blog, .contact').forEach(section => section.classList.remove('active'));
+  document.querySelector('.contact').classList.add('active');
+
+  document.getElementById("contact-form").scrollIntoView({ behavior: "smooth" });
+}
