@@ -197,7 +197,7 @@ projectItems.forEach(item => {
 
     projectModalImg.src = imgElement.src;
     projectModalImg.alt = imgElement.alt;
-    projectModalTitle.innerHTML = `${titleElement.innerText} <a href="#" onclick="openContactForm('${projectUrl}'); return false;" style="text-decoration:none; display:inline-flex; align-items:center;">🔗</a>`;
+    projectModalTitle.innerHTML = `${titleElement.innerText} <a href="#" onclick="openContactForm('${projectUrl}'); return false;" style="text-decoration:none; display:inline-flex; align-items:center;"> <ion-icon name="paper-plane" style="color: #C8AC58;"></ion-icon></a>`;
     console.log(projectUrl);
     projectModalText.innerHTML = `<p>${categoryElement.innerText}</p>` + 
     (descriptionElement ? `<p>${descriptionElement.innerText}</p>` : '') + 

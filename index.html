@@ -1,1388 +1,1059 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dylan Robles</title>
-
-  <!--
-    - favicon
-  -->
-  <link rel="shortcut icon" href="./assets/images/icon.png" type="image/x-icon" style="border-radius: 50%;">
-
-  <!--
-    - custom css link
-  -->
-  <link rel="stylesheet" href="./assets/css/style.css">
-
-  <!--
-    - google font link
-  -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-</head>
-
-<body>
-  <canvas id="particleCanvas"></canvas>
-  <!--
-    - #MAIN
-  -->
-
-  <main>
-
-    <!--
-      - #SIDEBAR
-    -->
-
-    <aside class="sidebar" data-sidebar>
-
-      <div class="sidebar-info">
-
-        <figure class="avatar-box">
-          <img src="./assets/images/my-avatar.png" alt="Dylan Robles" width="80">
-        </figure>
-
-        <div class="info-content">
-          <h1 class="name" title="Dylan Robles">Dylan Robles</h1>
-
-          <!-- <p class="title">Student @ UofM</p> -->
-          <p class="title"><span id="typed" style="display: inline;"></span></p>
-          <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-          <script>
-            var typed = new Typed('#typed', {
-              strings: ['UofM <span class="gold-color">Student</span>', 
-                        'AI <span class="gold-color">Aficionado</span>', 
-                        'Full Stack <span class="gold-color">Developer</span>',
-                        'Content <span class="gold-color">Creator</span>',
-                        'Piano <span class="gold-color">Fanatic</span>',
-                        '<span class="gold-color">Polyglot</span>'],
-              typeSpeed: 50,
-              backSpeed: 50,
-              backDelay: 2000,
-              showCursor: true,
-              loop: true,
-              onComplete: function(){
-                showCursor: false
-              }
-            })
-            
-          </script>
-
-        </div>
-
-        <button class="info_more-btn" data-sidebar-btn>
-          <span>Show Contacts</span>
-
-          <ion-icon name="chevron-down"></ion-icon>
-        </button>
-
-      </div>
-
-      <div class="sidebar-info_more">
-
-        <div class="separator"></div>
-
-        <ul class="contacts-list">
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="mail-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Email</p>
-
-              <a href="mailto:dtrobles@umich.edu" class="contact-link">dtrobles@umich.edu</a>
-            </div>
-
-          </li>
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="logo-linkedin"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">LinkedIn</p>
-
-              <a href="https://www.linkedin.com/in/dtrobles/" target="_blank" class="contact-link">dtrobles</a>
-            </div>
-
-          </li>
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="calendar-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Expected Graduation</p>
-
-              <time datetime="2005-04-05">May 2026</time>
-            </div>
-
-          </li>
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="location-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Location</p>
-
-              <address>Ann Arbor, Michigan</address>
-            </div>
-
-          </li>
-
-        </ul>
-
-        <div class="separator"></div>
-
-        <ul class="social-list">
-          <li class="social-item">
-            <a href="https://linktr.ee/not.aspect0" target="_blank" class="social-link">
-              <ion-icon name="logo-youtube"></ion-icon>
-            </a>
-          </li>
-
-          <li class="social-item">
-            <a href="https://github.com/dtrobles" target="_blank" class="social-link">
-              <ion-icon name="logo-github"></ion-icon>
-            </a>
-          </li>
-
-          <li class="social-item">
-            <a href="https://www.linkedin.com/in/dtrobles/" target="_blank" class="social-link">
-              <ion-icon name="logo-linkedin"></ion-icon>
-            </a>
-          </li>
-
-
-
-
-        </ul>
-
-      </div>
-
-    </aside>
-
-
-
-
-
-    <!--
-      - #main-content
-    -->
-
-    <div class="main-content">
-
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Dylan Robles</title>
       <!--
-        - #NAVBAR
-      -->
-
-      <nav class="navbar">
-
-        <ul class="navbar-list">
-
-          <li class="navbar-item">
-            <button class="navbar-link  active" data-nav-link>About</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Resume</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Portfolio</button>
-          </li>
-<!-- 
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Blog</button>
-          </li> -->
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Contact</button>
-          </li>
-
-        </ul>
-
-      </nav>
-
-
-
-
-
+         - favicon
+         -->
+      <link rel="shortcut icon" href="./assets/images/icon.png" type="image/x-icon" style="border-radius: 50%;">
       <!--
-        - #ABOUT
-      -->
-
-      <article class="about  active" data-page="about">
-
-        <header>
-          <h2 class="h2 article-title">About me</h2>
-        </header>
-
-        <section class="about-text">
-          <p>
-            Hello!👋 I'm Dylan Robles.
-          </p>
-
-          <p>
-            Since childhood, I've been captivated by the magic of artificial intelligence and machine learning, a 
-            passion that has steered me towards pursuing computer science at the University of Michigan, with a 
-            prospective minor in business.
-          </p>
-
-          <p>
-            My journey is about transforming early curiosity into impactful innovations in AI. I'm excited to connect 
-            with others in the tech community to push the boundaries of what's possible with AI and machine learning.
-          </p>
-
-          <p>
-            When I'm not crafting my next project, I enjoy
-            making videos, hitting the gym, learning languages, and playing the piano.
-          </p>
-          
-        </section>
-
-
-        <!--
-          - service
-        -->
-
-        <section class="service">
-
-          <h3 class="h3 service-title">What I'm doing</h3>
-
-          <ul class="service-list">
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/umichicon.png" alt="design icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Undergrad Student</h4>
-
-                <p class="service-item-text">
-                 As a CS undergrad, I'm always trying to stay on top of my academic game.
-                </p>
-              </div>
-
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/webdevelopment.png" alt="web development icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Web development</h4>
-
-                <p class="service-item-text">
-                  I love to create web applications based on AI principles I learn!
-                </p>
-              </div>
-
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/youtubeicon.png" alt="youtube icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <a href="https://linktr.ee/not.aspect0" target = "_blank">
-                  <h4 class="h4 service-item-title">Content creation</h4>
-                </a>
-
-                <p class="service-item-text">
-                  I'm passionate about video production. Feel free to give a watch!
-                </p>
-              </div>
-
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/languagelearning.png" alt="language learning icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Language Learning</h4>
-
-                <p class="service-item-text">
-                  I am a language learning fiend.
-                </p>
-              </div>
-
-            </li>
-
-          </ul>
-
-        </section>
-
-
-        <!--
-          - testimonials
-        -->
-
-        <section class="testimonials">
-
-          <h3 class="h3 testimonials-title">Recent Projects</h3>
-
-          <ul class="testimonials-list has-scrollbar">
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                  <figure class="testimonials-avatar-box">
-                      <img src="./assets/images/project icons/melodeye.png" alt="Melodeye" width="60" data-testimonials-avatar>
+         - custom css link
+         -->
+      <link rel="stylesheet" href="./assets/css/style.css">
+      <!--
+         - google font link
+         -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+   </head>
+   <body>
+      <canvas id="particleCanvas"></canvas>
+      <!--
+         - #MAIN
+         -->
+      <main>
+         <!--
+            - #SIDEBAR
+            -->
+         <aside class="sidebar" data-sidebar>
+            <div class="sidebar-info">
+               <figure class="avatar-box">
+                  <img src="./assets/images/my-avatar.png" alt="Dylan Robles" width="80">
+               </figure>
+               <div class="info-content">
+                  <h1 class="name" title="Dylan Robles">Dylan Robles</h1>
+                  <!-- <p class="title">Student @ UofM</p> -->
+                  <p class="title"><span id="typed" style="display: inline;"></span></p>
+                  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+                  <script>
+                     var typed = new Typed('#typed', {
+                       strings: ['UofM <span class="gold-color">Student</span>', 
+                                 'AI <span class="gold-color">Aficionado</span>', 
+                                 'Full Stack <span class="gold-color">Developer</span>',
+                                 'Content <span class="gold-color">Creator</span>',
+                                 'Piano <span class="gold-color">Fanatic</span>',
+                                 '<span class="gold-color">Polyglot</span>'],
+                       typeSpeed: 50,
+                       backSpeed: 50,
+                       backDelay: 2000,
+                       showCursor: true,
+                       loop: true,
+                       onComplete: function(){
+                         showCursor: false
+                       }
+                     })
+                     
+                  </script>
+               </div>
+               <button class="info_more-btn" data-sidebar-btn>
+                  <span>Show Contacts</span>
+                  <ion-icon name="chevron-down"></ion-icon>
+               </button>
+            </div>
+            <div class="sidebar-info_more">
+               <div class="separator"></div>
+               <ul class="contacts-list">
+                  <li class="contact-item">
+                     <div class="icon-box">
+                        <ion-icon name="mail-outline"></ion-icon>
+                     </div>
+                     <div class="contact-info">
+                        <p class="contact-title">Email</p>
+                        <a href="mailto:dtrobles@umich.edu" class="contact-link">dtrobles@umich.edu</a>
+                     </div>
+                  </li>
+                  <li class="contact-item">
+                     <div class="icon-box">
+                        <ion-icon name="logo-linkedin"></ion-icon>
+                     </div>
+                     <div class="contact-info">
+                        <p class="contact-title">LinkedIn</p>
+                        <a href="https://www.linkedin.com/in/dtrobles/" target="_blank" class="contact-link">dtrobles</a>
+                     </div>
+                  </li>
+                  <li class="contact-item">
+                     <div class="icon-box">
+                        <ion-icon name="calendar-outline"></ion-icon>
+                     </div>
+                     <div class="contact-info">
+                        <p class="contact-title">Expected Graduation</p>
+                        <time datetime="2005-04-05">May 2026</time>
+                     </div>
+                  </li>
+                  <li class="contact-item">
+                     <div class="icon-box">
+                        <ion-icon name="location-outline"></ion-icon>
+                     </div>
+                     <div class="contact-info">
+                        <p class="contact-title">Location</p>
+                        <address>Ann Arbor, Michigan</address>
+                     </div>
+                  </li>
+               </ul>
+               <div class="separator"></div>
+               <ul class="social-list">
+                  <li class="social-item">
+                     <a href="https://linktr.ee/not.aspect0" target="_blank" class="social-link">
+                        <ion-icon name="logo-youtube"></ion-icon>
+                     </a>
+                  </li>
+                  <li class="social-item">
+                     <a href="https://github.com/dtrobles" target="_blank" class="social-link">
+                        <ion-icon name="logo-github"></ion-icon>
+                     </a>
+                  </li>
+                  <li class="social-item">
+                     <a href="https://www.linkedin.com/in/dtrobles/" target="_blank" class="social-link">
+                        <ion-icon name="logo-linkedin"></ion-icon>
+                     </a>
+                  </li>
+               </ul>
+            </div>
+         </aside>
+         <!--
+            - #main-content
+            -->
+         <div class="main-content">
+            <!--
+               - #NAVBAR
+               -->
+            <nav class="navbar">
+               <ul class="navbar-list">
+                  <li class="navbar-item">
+                     <button class="navbar-link  active" data-nav-link>About</button>
+                  </li>
+                  <li class="navbar-item">
+                     <button class="navbar-link" data-nav-link>Resume</button>
+                  </li>
+                  <li class="navbar-item">
+                     <button class="navbar-link" data-nav-link>Portfolio</button>
+                  </li>
+                  <!-- 
+                     <li class="navbar-item">
+                       <button class="navbar-link" data-nav-link>Blog</button>
+                     </li> -->
+                  <li class="navbar-item">
+                     <button class="navbar-link" data-nav-link>Contact</button>
+                  </li>
+               </ul>
+            </nav>
+            <!--
+               - #ABOUT
+               -->
+            <article class="about  active" data-page="about">
+               <header>
+                  <h2 class="h2 article-title">About me</h2>
+               </header>
+               <section class="about-text">
+                  <p>
+                     Hello!👋 I'm Dylan Robles.
+                  </p>
+                  <p>
+                     Since childhood, I've been captivated by the magic of artificial intelligence and machine learning, a 
+                     passion that has steered me towards pursuing computer science at the University of Michigan, with a 
+                     prospective minor in business.
+                  </p>
+                  <p>
+                     My journey is about transforming early curiosity into impactful innovations in AI. I'm excited to connect 
+                     with others in the tech community to push the boundaries of what's possible with AI and machine learning.
+                  </p>
+                  <p>
+                     When I'm not crafting my next project, I enjoy
+                     making videos, hitting the gym, learning languages, and playing the piano.
+                  </p>
+               </section>
+               <!--
+                  - service
+                  -->
+               <section class="service">
+                  <h3 class="h3 service-title">What I'm doing</h3>
+                  <ul class="service-list">
+                     <li class="service-item">
+                        <div class="service-icon-box">
+                           <img src="./assets/images/umichicon.png" alt="design icon" width="40">
+                        </div>
+                        <div class="service-content-box">
+                           <h4 class="h4 service-item-title">Undergrad Student</h4>
+                           <p class="service-item-text">
+                              As a CS undergrad, I'm always trying to stay on top of my academic game.
+                           </p>
+                        </div>
+                     </li>
+                     <li class="service-item">
+                        <div class="service-icon-box">
+                           <img src="./assets/images/webdevelopment.png" alt="web development icon" width="40">
+                        </div>
+                        <div class="service-content-box">
+                           <h4 class="h4 service-item-title">Web development</h4>
+                           <p class="service-item-text">
+                              I love to create web applications based on AI principles I learn!
+                           </p>
+                        </div>
+                     </li>
+                     <li class="service-item">
+                        <div class="service-icon-box">
+                           <img src="./assets/images/youtubeicon.png" alt="youtube icon" width="40">
+                        </div>
+                        <div class="service-content-box">
+                           <a href="https://linktr.ee/not.aspect0" target = "_blank">
+                              <h4 class="h4 service-item-title">Content creation</h4>
+                           </a>
+                           <p class="service-item-text">
+                              I'm passionate about video production. Feel free to give a watch!
+                           </p>
+                        </div>
+                     </li>
+                     <li class="service-item">
+                        <div class="service-icon-box">
+                           <img src="./assets/images/languagelearning.png" alt="language learning icon" width="40">
+                        </div>
+                        <div class="service-content-box">
+                           <h4 class="h4 service-item-title">Language Learning</h4>
+                           <p class="service-item-text">
+                              I am a language learning fiend.
+                           </p>
+                        </div>
+                     </li>
+                  </ul>
+               </section>
+               <!--
+                  - testimonials
+                  -->
+               <section class="testimonials">
+                  <h3 class="h3 testimonials-title">Recent Projects</h3>
+                  <ul class="testimonials-list has-scrollbar">
+                     <li class="testimonials-item">
+                        <div class="content-card" data-testimonials-item>
+                           <figure class="testimonials-avatar-box">
+                              <img src="./assets/images/project icons/melodeye.png" alt="Melodeye" width="60" data-testimonials-avatar>
+                           </figure>
+                           <h4 class="h4 testimonials-item-title" data-testimonials-title>Melodeye</h4>
+                           <div class="testimonials-text" data-testimonials-text>
+                              <p>
+                                 Developed Melodeye, a native mobile app that leverages GPT-4o’s image analysis and the Spotify API 
+                                 to dynamically generate user playlists based on the contents of an image.
+                                 Utilized React Native for the frontend, Node.js/Express for the backend, and AWS for deployment.                        
+                              </p>
+                              <br>
+                              <time datetime="2021-06-14">TypeScript, React Native, Node.js/Express, AWS</time>
+                           </div>
+                        </div>
+                     </li>
+                     <li class="testimonials-item">
+                        <div class="content-card" data-testimonials-item>
+                           <figure class="testimonials-avatar-box">
+                              <img src="./assets/images/project icons/piazza post classifier.png" alt="NLP Piazza Post Classifier" width="60" data-testimonials-avatar>
+                           </figure>
+                           <h4 class="h4 testimonials-item-title" data-testimonials-title>Piazza Post Classifier</h4>
+                           <div class="testimonials-text" data-testimonials-text>
+                              <p>
+                                 Used machine learning and natural language processing (NLP) concepts to automatically identify
+                                 the subject of Piazza posts. Utilized binary search trees and maps for data management.
+                                 Recursive algorithms were implemented for classification to enhance the accuracy of subject
+                                 identification.
+                              </p>
+                              <br>
+                              <time datetime="2021-06-14"> C++, Natural Language Processing, Binary Search Trees, Maps</time>
+                           </div>
+                        </div>
+                     </li>
+                     <li class="testimonials-item">
+                      <div class="content-card" data-testimonials-item>
+                         <figure class="testimonials-avatar-box">
+                            <img src="./assets/images/project icons/texteditor.png" alt="NLP Piazza Post Classifier" width="60" data-testimonials-avatar>
+                         </figure>
+                         <h4 class="h4 testimonials-item-title" data-testimonials-title>Terminal-based Text Editor</h4>
+                         <div class="testimonials-text" data-testimonials-text>
+                            <p>
+                              Developed a terminal-based text editor implementing container abstract data types (ADTs), dynamic memory management, 
+                              linked lists, and iterators in C++. Gained experience with advanced C++ concepts including the Big Three (destructor, 
+                              copy constructor, copy assignment operator), memory leak prevention, and unit testing frameworks.
+                            </p>
+                            <br>
+                            <time datetime="2021-06-14"> C++, Linked Lists, Container ADTs, Dynamic Memory Management, Unit Testing</time>
+                         </div>
+                      </div>
+                   </li>
+                     <li class="testimonials-item">
+                        <div class="content-card" data-testimonials-item>
+                           <figure class="testimonials-avatar-box">
+                              <img src="./assets/images/project icons/euchre.webp" alt="Euchre Simulation" width="60" data-testimonials-avatar>
+                           </figure>
+                           <h4 class="h4 testimonials-item-title" data-testimonials-title>Euchre Simulation</h4>
+                           <div class="testimonials-text" data-testimonials-text>
+                              <p>
+                                 Developed a Euchre game simulation in C++ employing Object-Oriented Programming principles, 
+                                 focusing on ADTs, inheritance, and polymorphism. Utilized data structures such as vectors for
+                                 card and player management, and implemented algorithms including a variant of the riffle shuffle
+                                 for deck preparation and a strategy algorithm for AI player decisions.
+                              </p>
+                              <br>
+                              <time datetime="2021-06-14"> C++, OOP, ADTs, Dynamic Memory Allocation, Polymorphism</time>
+                           </div>
+                        </div>
+                     </li>
+                     <li class="testimonials-item">
+                        <div class="content-card" data-testimonials-item>
+                           <figure class="testimonials-avatar-box">
+                              <img src="./assets/images/project icons/image resizer.png" alt="Seam-Carving Image Resizer" width="60" data-testimonials-avatar>
+                           </figure>
+                           <h4 class="h4 testimonials-item-title" data-testimonials-title>Image Resizer</h4>
+                           <div class="testimonials-text" data-testimonials-text>
+                              <p>
+                                 Developed a content-aware image resizing program using the seam-carving algorithm.
+                                 The program identifies and removes less significant seams from images for resizing,
+                                 abstract data types and dynamic memory allocation and manipulation.
+                              </p>
+                              <br>
+                              <time datetime="2021-06-14">C++, Computer Vision, Seam Carivng, Dynamic memory management</time>
+                           </div>
+                        </div>
+                     </li>
+                     <li class="testimonials-item">
+                        <div class="content-card" data-testimonials-item>
+                           <figure class="testimonials-avatar-box">
+                              <img src="./assets/images/project icons/space invaders.png" alt="Arduino Space Invaders" width="60" data-testimonials-avatar>
+                           </figure>
+                           <h4 class="h4 testimonials-item-title" data-testimonials-title>Arduino Space Invaders</h4>
+                           <div class="testimonials-text" data-testimonials-text>
+                              <p>
+                                 Worked with an Arduino Uno to program LED displays for creating graphical representations of Space Invaders.
+                                 By reading inputs from a potentiometer and a button, updates were made to an LED screen output, allowing players
+                                 to manage and manipulate the game state in real-time.
+                              </p>
+                              <br>
+                              <time datetime="2021-06-14"> C++, Arduino Uno, Embedded Systems</time>
+                           </div>
+                        </div>
+                     </li>
+                  </ul>
+               </section>
+               <!--
+                  - testimonials modal
+                  -->
+               <div class="modal-container" data-modal-container>
+                  <div class="overlay" data-overlay></div>
+                  <section class="testimonials-modal">
+                     <button class="modal-close-btn" data-modal-close-btn>
+                        <ion-icon name="close-outline"></ion-icon>
+                     </button>
+                     <div class="modal-img-wrapper">
+                        <figure class="modal-avatar-box">
+                           <img sr*c="./assets/images/avatar-1.png" alt="Arduino Project" width="80" data-modal-img>
+                        </figure>
+                     </div>
+                     <div class="modal-content">
+                        <h4 class="h3 modal-title" data-modal-title></h4>
+                        <div data-modal-text>
+                           <p>
+                           </p>
+                        </div>
+                     </div>
+                  </section>
+               </div>
+               <!--
+                  - clients
+                  -->
+            </article>
+            <!--
+               - #RESUME
+               -->
+            <article class="resume" data-page="resume">
+               <header>
+                  <h2 class="h2 article-title">Resume</h2>
+               </header>
+               <section class="timeline">
+                  <div class="title-wrapper">
+                     <div class="icon-box">
+                        <ion-icon name="book-outline"></ion-icon>
+                     </div>
+                     <h3 class="h3">Education</h3>
+                  </div>
+                  <ol class="timeline-list">
+                     <li class="timeline-item">
+                        <h4 class="h4 timeline-item-title">University of Michigan, College <span style="text-transform: lowercase; font-weight: bold; display: inline; color: rgb(227,223,217);">of</span> LSA</h4>
+                        <span>2023 — 2026</span>
+                        <!-- <p class="timeline-text">
+                           GPA: 3.8/4.0
+                           </p> -->
+                     </li>
+                     <li class="timeline-item">
+                        <h4 class="h4 timeline-item-title">Mountain View High School</h4>
+                        <span>2019 — 2023</span>
+                        <!-- <p class="timeline-text">
+                           Ratione voluptatem sequi nesciunt, facere quisquams facere menda ossimus, omnis voluptas assumenda est
+                           omnis..
+                           </p> -->
+                     </li>
+                  </ol>
+               </section>
+               <section class="timeline">
+                  <div class="title-wrapper">
+                     <div class="icon-box">
+                        <ion-icon name="star-outline"></ion-icon>
+                     </div>
+                     <h3 class="h3">Relevant Experience</h3>
+                  </div>
+                  <ol class="timeline-list">
+                     <li class="timeline-item">
+                        <h4 class="h4 timeline-item-title">University of Tokyo
+                           <span style="color: rgb(255, 255, 255); font-weight: normal; display: inline;"> | </span> 
+                           <span style="font-weight: normal; display: inline; color: white">Research Intern</span>
+                        </h4>
+                        </h4>
+                        <span>July & August 2024</span>
+                        <p class="timeline-text">
+                           • Enhanced the study 'CycleGAN-based Realistic Image Dataset Generation for Forward-Looking 
+                           Sonar' by proposing and implementing CUT over CycleGAN, achieving faster training and 
+                           enhancing simulated sonar images into realistic representations.<br>
+                           • Developed a data visualization tool for ショッカクシューズ (Shokakku Shoes) using Python,
+                           Pandas, Dash (Plotly), and Batch scripting.
+                        </p>
+                     </li>
+                     <li class="timeline-item">
+                        <h4 class="h4 timeline-item-title">Study Tools at MVHS Club
+                           <span style="color: white; font-weight: normal; display: inline;"> | </span> 
+                           <span style="font-weight: normal; display: inline; color: white">President</span>
+                        </h4>
+                        </h4>
+                        <span>Oct. 2021 - June 2023</span>
+                        <p class="timeline-text">
+                           • Collaborated with a team of 5 to uniquely brand and develop a multi-subject, full stack Javascript 
+                           study program and released it to the student body.<br>
+                           • Formed and instructed an elementary school Scratch tutoring team. Conducted instructional and 
+                           tutoring workshops.
+                        </p>
+                     </li>
+                     <li class="timeline-item">
+                        <h4 class="h4 timeline-item-title">Jr. Java Programming Intern
+                           <span style="color: white; font-weight: normal; display: inline;"> | </span> 
+                           <span style="font-weight: normal; display: inline; color: white">Assistant Teacher</span>
+                        </h4>
+                        </h4>
+                        <span>June - July 2019</span>
+                        <p class="timeline-text">
+                           • Facilitated comprehensive instruction in Java, imparting essential concepts and expert 
+                           debugging strategies for class projects.
+                           <br>
+                           • Addressed homework and classwork inquiries from students, propelling academic
+                           growth and success in class.
+                        </p>
+                     </li>
+                  </ol>
+               </section>
+               <section class="timeline">
+                  <div class="title-wrapper">
+                     <div class="icon-box">
+                        <ion-icon name="person-outline"></ion-icon>
+                     </div>
+                     <h3 class="h3">Leadership Experience</h3>
+                  </div>
+                  <ol class="timeline-list">
+                     <li class="timeline-item">
+                        <h4 class="h4 timeline-item-title">ACTIN Nonprofit
+                           <span style="color: white; font-weight: normal; display: inline;"> | </span> 
+                           <span style="font-weight: normal; display: inline; color: white">Founder & CEO</span>
+                        </h4>
+                        <span>2019 - Present</span>
+                        <p class="timeline-text">
+                           • Implemented expertise in computer building to bridge the technology gap in the Bay Area, aiding 
+                           underprivileged families in leveraging technology.<br>
+                           • Generated $10,000+ in funds through diverse outreach campaigns.<br>
+                           • Coordinated charity drive, collecting surplus mobile phones and tablets for donation. 
+                        </p>
+                     </li>
+                     <li class="timeline-item">
+                        <h4 class="h4 timeline-item-title">Anywhere 3D
+                           <span style="color: white; font-weight: normal; display: inline;"> | </span> 
+                           <span style="font-weight: normal; display: inline; color: white">Co-Founder</span>
+                        </h4>
+                        <span>June & July 2022</span>
+                        <p class="timeline-text">
+                           • Co-founded a startup and democratized 3D printing access nationally, aided underfunded high 
+                           school robotics teams with access to high-quality 3D printers.<br>
+                           • Headed website creation, marketing, and collaborative initiatives with other businesses.           
+                        </p>
+                     </li>
+                  </ol>
+               </section>
+               <section class="timeline">
+                  <div class="title-wrapper">
+                     <div class="icon-box">
+                        <ion-icon name="telescope-outline"></ion-icon>
+                     </div>
+                     <h3 class="h3">Additional Experiences</h3>
+                  </div>
+                  <ol class="timeline-list">
+                     <li class="timeline-item">
+                        <h4 class="h4 timeline-item-title">YouTube, Instagram, TikTok Creator
+                           <span style="color: white; font-weight: normal; display: inline;"> | </span> 
+                           <span style="font-weight: normal; display: inline; color: white">Founder</span>
+                        </h4>
+                        </h4>
+                        <span>2021 - Present</span>
+                        <p class="timeline-text">
+                           • Established a unique brand and cultivated 90M+ views and 130K+ followers across various social
+                           media platforms. <br>
+                           • Mastered media applications like Premiere Pro, After Effects, and Photoshop.
+                        </p>
+                     </li>
+                  </ol>
+               </section>
+               <section class="clients">
+                  <h3 class="h3 clients-title">Skills</h3>
+                  <ul class="clients-list has-scrollbar">
+                     <li class="clients-item">
+                        <a>
+                           <div class="clients-overlay-container">
+                              <img src="./assets/images/gitlogo.png" alt="git">
+                              <div class="overlay-text">Git</div>
+                              <!-- The text you want to display on hover -->
+                           </div>
+                        </a>
+                     </li>
+                     <li class="clients-item">
+                        <a>
+                           <div class="clients-overlay-container">
+                              <img src="./assets/images/reactlogo.png" alt="react">
+                              <div class="overlay-text">React</div>
+                              <!-- The text you want to display on hover -->
+                           </div>
+                        </a>
+                     </li>
+                     <li class="clients-item">
+                        <a>
+                           <div class="clients-overlay-container">
+                              <img src="./assets/images/nodejslogo.png" alt="css">
+                              <div class="overlay-text">Node.js</div>
+                              <!-- The text you want to display on hover -->
+                           </div>
+                        </a>
+                     </li>
+                     <li class="clients-item">
+                        <a>
+                           <div class="clients-overlay-container">
+                              <img src="./assets/images/pandaslogo.png" alt="css">
+                              <div class="overlay-text">Pandas</div>
+                              <!-- The text you want to display on hover -->
+                           </div>
+                        </a>
+                     </li>
+                     <li class="clients-item">
+                        <a>
+                           <div class="clients-overlay-container">
+                              <img src="./assets/images/awslogo.png" alt="css">
+                              <div class="overlay-text">AWS</div>
+                              <!-- The text you want to display on hover -->
+                           </div>
+                        </a>
+                     </li>
+                     <li class="clients-item">
+                        <a>
+                           <div class="clients-overlay-container">
+                              <img src="./assets/images/typescriptlogo.png" alt="typescript">
+                              <div class="overlay-text">Typescript</div>
+                              <!-- The text you want to display on hover -->
+                           </div>
+                        </a>
+                     </li>
+                     <li class="clients-item">
+                        <a>
+                           <div class="clients-overlay-container">
+                              <img src="./assets/images/jslogo.png" alt="javascript">
+                              <div class="overlay-text">Javascript</div>
+                              <!-- The text you want to display on hover -->
+                           </div>
+                        </a>
+                     </li>
+                     <li class="clients-item">
+                        <a>
+                           <div class="clients-overlay-container">
+                              <img src="./assets/images/htmllogo.png" alt="html">
+                              <div class="overlay-text">HTML</div>
+                              <!-- The text you want to display on hover -->
+                           </div>
+                        </a>
+                     </li>
+                     <li class="clients-item">
+                        <a>
+                           <div class="clients-overlay-container">
+                              <img src="./assets/images/csslogo.png" alt="css">
+                              <div class="overlay-text">CSS</div>
+                              <!-- The text you want to display on hover -->
+                           </div>
+                        </a>
+                     </li>
+                     <li class="clients-item">
+                        <a>
+                           <div class="clients-overlay-container">
+                              <img src="./assets/images/pythonlogo.png" alt="python">
+                              <div class="overlay-text">Python</div>
+                              <!-- The text you want to display on hover -->
+                           </div>
+                        </a>
+                     </li>
+                     <li class="clients-item">
+                        <a>
+                           <div class="clients-overlay-container">
+                              <img src="./assets/images/c++logo.png" alt="c++">
+                              <div class="overlay-text">C++</div>
+                              <!-- The text you want to display on hover -->
+                           </div>
+                        </a>
+                     </li>
+                     <li class="clients-item">
+                        <a>
+                           <div class="clients-overlay-container">
+                              <img src="./assets/images/javalogo.png" alt="java">
+                              <div class="overlay-text">Java</div>
+                              <!-- The text you want to display on hover -->
+                           </div>
+                        </a>
+                     </li>
+                     <li class="clients-item">
+                        <a>
+                           <div class="clients-overlay-container">
+                              <img src="./assets/images/mongodblogo.png" alt="mongodb">
+                              <div class="overlay-text">MongoDB</div>
+                              <!-- The text you want to display on hover -->
+                           </div>
+                        </a>
+                     </li>
+                     <li class="clients-item">
+                        <a>
+                           <div class="clients-overlay-container">
+                              <img src="./assets/images/blenderlogo.png" alt="blender">
+                              <div class="overlay-text">Blender</div>
+                              <!-- The text you want to display on hover -->
+                           </div>
+                        </a>
+                     </li>
+                     <li class="clients-item">
+                        <a>
+                           <div class="clients-overlay-container">
+                              <img src="./assets/images/after effects.png" alt="after effects">
+                              <div class="overlay-text">After Effects</div>
+                              <!-- The text you want to display on hover -->
+                           </div>
+                        </a>
+                     </li>
+                     <li class="clients-item">
+                        <a>
+                           <div class="clients-overlay-container">
+                              <img src="./assets/images/premiere pro.png" alt="premiere pro">
+                              <div class="overlay-text">Premiere Pro</div>
+                              <!-- The text you want to display on hover -->
+                           </div>
+                        </a>
+                     </li>
+                     <li class="clients-item">
+                        <a>
+                           <div class="clients-overlay-container">
+                              <img src="./assets/images/photoshop.png" alt="photoshop">
+                              <div class="overlay-text">Photoshop</div>
+                              <!-- The text you want to display on hover -->
+                           </div>
+                        </a>
+                     </li>
+                  </ul>
+               </section>
+               <section class="skill">
+                  <h3 class="h3 skills-title">Languages</h3>
+                  <ul class="skills-list content-card">
+                     <li class="skills-item">
+                        <div class="title-wrapper">
+                           <h5 class="h5">English</h5>
+                           <data value="100">(Native)</data>
+                        </div>
+                        <div class="skill-progress-bg">
+                           <div class="skill-progress-fill" style="width: 100%;"></div>
+                        </div>
+                     </li>
+                     <li class="skills-item">
+                        <div class="title-wrapper">
+                           <h5 class="h5">Japanese</h5>
+                           <data value="90">(N2/N1)</data>
+                        </div>
+                        <div class="skill-progress-bg">
+                           <div class="skill-progress-fill" style="width: 90%;"></div>
+                        </div>
+                     </li>
+                     <li class="skills-item">
+                        <div class="title-wrapper">
+                           <h5 class="h5">Spanish</h5>
+                           <data value="65">(B2)</data>
+                        </div>
+                        <div class="skill-progress-bg">
+                           <div class="skill-progress-fill" style="width: 65%;"></div>
+                        </div>
+                     </li>
+                     <li class="skills-item">
+                        <div class="title-wrapper">
+                           <h5 class="h5">Chinese</h5>
+                           <data value="83">(HSK 2)</data>
+                        </div>
+                        <div class="skill-progress-bg">
+                           <div class="skill-progress-fill" style="width: 23%;"></div>
+                        </div>
+                     </li>
+                     <!-- <li class="skills-item">
+                        <div class="title-wrapper">
+                          <h5 class="h5">Tagalog</h5>
+                          <data value="15">(A1)</data>
+                        </div>
+                        
+                        <div class="skill-progress-bg">
+                          <div class="skill-progress-fill" style="width: 15%;"></div>
+                        </div>
+                        
+                        </li> -->
+                  </ul>
+               </section>
+            </article>
+            <!--
+               - #PORTFOLIO
+               -->
+            <article class="portfolio" data-page="portfolio">
+               <header>
+                  <h2 class="h2 article-title">Projects</h2>
+               </header>
+               <section class="projects">
+                  <!-- 
+                     <ul class="filter-list">
+                     
+                       <li class="filter-item">
+                         <button class="active" data-filter-btn>All</button>
+                       </li>
+                     
+                       <li class="filter-item">
+                         <button data-filter-btn>Web design</button>
+                       </li>
+                     
+                       <li class="filter-item">
+                         <button data-filter-btn>Applications</button>
+                       </li>
+                     
+                       <li class="filter-item">
+                         <button data-filter-btn>Web development</button>
+                       </li>
+                     
+                     </ul> -->
+                  <!-- <div class="filter-select-box">
+                     <button class="filter-select" data-select>
+                     
+                       <div class="select-value" data-selecct-value>Select category</div>
+                     
+                       <div class="select-icon">
+                         <ion-icon name="chevron-down"></ion-icon>
+                       </div>
+                     
+                     </button>
+                     
+                     </div> -->
+                  <ul class="project-list">
+                     <li class="project-item active" data-project-url="Hello! I am interested in using Melodeye, would you be able to provide me with a link?" data-filter-item data-category="web development">
+                        <a href="#">
+                           <figure class="project-img">
+                              <div class="project-item-icon-box">
+                                 <ion-icon name="eye-outline"></ion-icon>
+                              </div>
+                              <img src="./assets/images/project icons/melodeye large.png" alt="finance" loading="lazy">
+                           </figure>
+                           <h3 class="project-title">Melodeye</h3>
+                           <p class="project-category"></p>
+                           <p class="project-description">Developed Melodeye, a native mobile app that leverages GPT-4o’s image analysis and the Spotify API to dynamically generate user playlists based on the contents of an image. Utilized React Native for the frontend, Node.js/Express for the backend, and AWS for deployment.</p>
+                           <p class="skillsbuffer"></p>
+                           <i class="project-skills">TypeScript, React Native, Node.js/Express, AWS</i>
+                        </a>
+                     </li>
+                     <li class="project-item  active" data-project-url="Hello! I am interested in viewing your Piazza Post Classifier project." data-filter-item data-category="web development">
+                        <a href="#">
+                           <figure class="project-img">
+                              <div class="project-item-icon-box">
+                                 <ion-icon name="eye-outline"></ion-icon>
+                              </div>
+                              <img src="./assets/images/project icons/piazza post classifier large.png" alt="finance" loading="lazy">
+                           </figure>
+                           <h3 class="project-title">Piazza Post Classifier</h3>
+                           <p class="project-category"></p>
+                           <p class="project-description">Used machine learning and natural language processing (NLP) concepts to 
+                              automatically identify the subject of Piazza posts. Utilized binary search trees and maps for data 
+                              management. Recursive algorithms were implemented for classification to enhance the accuracy of 
+                              subject identification. 
+                           </p>
+                           <p class="skillsbuffer"></p>
+                           <i class="project-skills">C++, Natural Language Processing, Binary Search Trees, Maps</i>
+                        </a>
+                     </li>
+                     <li class="project-item  active" data-project-url="Hello! I am interested in viewing your Terminal-based Text Editor." data-filter-item data-category="web development">
+                        <a href="#">
+                           <figure class="project-img">
+                              <div class="project-item-icon-box">
+                                 <ion-icon name="eye-outline"></ion-icon>
+                              </div>
+                              <img src="./assets/images/project icons/texteditor large.png" alt="finance" loading="lazy">
+                           </figure>
+                           <h3 class="project-title">Terminal-based Text Editor</h3>
+                           <p class="project-category"></p>
+                           <p class="project-description">Developed a terminal-based text editor implementing container abstract data types (ADTs), dynamic memory management, 
+                              linked lists, and iterators in C++. Gained experience with advanced C++ concepts including the Big Three (destructor, 
+                              copy constructor, copy assignment operator), memory leak prevention, and unit testing frameworks.
+                           </p>
+                           <p class="skillsbuffer"></p>
+                           <i class="project-skills">C++, Linked Lists, Container ADTs, Dynamic Memory Management, Unit Testing</i>
+                        </a>
+                     </li>
+                     <li class="project-item  active" data-project-url="Hello! I am interested in viewing your Euchre Simulation." data-filter-item data-category="web development">
+                        <a href="#">
+                           <figure class="project-img">
+                              <div class="project-item-icon-box">
+                                 <ion-icon name="eye-outline"></ion-icon>
+                              </div>
+                              <img src="./assets/images/project icons/euchre large.png" alt="finance" loading="lazy">
+                           </figure>
+                           <h3 class="project-title">Euchre Simulation</h3>
+                           <p class="project-category"></p>
+                           <p class="project-description">Developed a Euchre game simulation in C++ employing Object-Oriented Programming principles, 
+                              focusing on ADTs, inheritance, and polymorphism. Utilized data structures such as vectors for card and player management, 
+                              and implemented a riffle shuffle algorithm for deck preparation and a strategy algorithm for AI player decisions.
+                           </p>
+                           <p class="skillsbuffer"></p>
+                           <i class="project-skills">C++, OOP, ADTs, Dynamic Memory Allocation</i>
+                        </a>
+                     </li>
+                     <li class="project-item  active" data-project-url="Hello! I am interested in viewing your Image Resizer project." data-filter-item data-category="web development">
+                        <a href="#">
+                           <figure class="project-img">
+                              <div class="project-item-icon-box">
+                                 <ion-icon name="eye-outline"></ion-icon>
+                              </div>
+                              <img src="./assets/images/project icons/image resizer large.png" alt="finance" loading="lazy">
+                           </figure>
+                           <h3 class="project-title">Image Resizer</h3>
+                           <p class="project-category"></p>
+                           <p class="project-description">Developed a content-aware image resizing program using the seam-carving algorithm. 
+                              The program identifies and removes less significant seams from images for resizing, abstract data types and 
+                              dynamic memory allocation and manipulation.
+                           </p>
+                           <p class="skillsbuffer"></p>
+                           <i class="project-skills">C++, Computer Vision, Seam Carving, Dynamic Memory Management</i>
+                        </a>
+                     </li>
+                     <li class="project-item  active" data-project-url="Hello! I am interested in viewing your Arduino Space Invaders project." data-filter-item data-category="web development">
+                        <a href="#">
+                           <figure class="project-img">
+                              <div class="project-item-icon-box">
+                                 <ion-icon name="eye-outline"></ion-icon>
+                              </div>
+                              <img src="./assets/images/project icons/space invaders large.png" alt="finance" loading="lazy">
+                           </figure>
+                           <h3 class="project-title">Arduino Space Invaders</h3>
+                           <p class="project-category"></p>
+                           <p class="project-description">Worked with an Arduino Uno to program LED displays for creating graphical 
+                              representations of Space Invaders. By reading inputs from a potentiometer and a button, updates were 
+                              made to an LED screen output, allowing players to manage and manipulate the game state in real-time.
+                           </p>
+                           <p class="skillsbuffer"></p>
+                           <i class="project-skills">C++, Arduino Uno, Embedded Systems</i>
+                        </a>
+                     </li>
+                  </ul>
+               </section>
+            </article>
+            <!-- project modal -->
+            <div class="project-modal-container" data-project-modal-container>
+               <div class="project-overlay" data-project-overlay></div>
+               <section class="project-modal">
+                  <button class="project-modal-close-btn" data-project-modal-close-btn>
+                     <ion-icon name="close-outline"></ion-icon>
+                  </button>
+                  <div class="modal-img-wrapper">
+                     <figure class="project-avatar-box">
+                        <img src="./assets/images/project-placeholder.png" alt="Project Image" width="80" data-project-modal-img>
+                     </figure>
+                  </div>
+                  <div class="project-modal-content">
+                     <h3 class="h3 modal-title" data-project-modal-title></h3>
+                     <br>
+                     <div data-project-modal-text>
+                        <p></p>
+                     </div>
+                  </div>
+               </section>
+            </div>
+            <!--
+               - #BLOG
+               -->
+            <article class="blog" data-page="blog">
+               <header>
+                  <h2 class="h2 article-title">Blog</h2>
+               </header>
+               <section class="blog-posts">
+                  <ul class="blog-posts-list">
+                     <li class="blog-post-item">
+                        <a href="#">
+                           <figure class="blog-banner-box">
+                              <img src="./assets/images/blog-1.jpg" alt="Design conferences in 2022" loading="lazy">
+                           </figure>
+                           <div class="blog-content">
+                              <div class="blog-meta">
+                                 <p class="blog-category">Design</p>
+                                 <span class="dot"></span>
+                                 <time datetime="2022-02-23">Fab 23, 2022</time>
+                              </div>
+                              <h3 class="h3 blog-item-title">Design conferences in 2022</h3>
+                              <p class="blog-text">
+                                 Veritatis et quasi architecto beatae vitae dicta sunt, explicabo.
+                              </p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="blog-post-item">
+                        <a href="#">
+                           <figure class="blog-banner-box">
+                              <img src="./assets/images/blog-2.jpg" alt="Best fonts every designer" loading="lazy">
+                           </figure>
+                           <div class="blog-content">
+                              <div class="blog-meta">
+                                 <p class="blog-category">Design</p>
+                                 <span class="dot"></span>
+                                 <time datetime="2022-02-23">Fab 23, 2022</time>
+                              </div>
+                              <h3 class="h3 blog-item-title">Best fonts every designer</h3>
+                              <p class="blog-text">
+                                 Sed ut perspiciatis, nam libero tempore, cum soluta nobis est eligendi.
+                              </p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="blog-post-item">
+                        <a href="#">
+                           <figure class="blog-banner-box">
+                              <img src="./assets/images/blog-3.jpg" alt="Design digest #80" loading="lazy">
+                           </figure>
+                           <div class="blog-content">
+                              <div class="blog-meta">
+                                 <p class="blog-category">Design</p>
+                                 <span class="dot"></span>
+                                 <time datetime="2022-02-23">Fab 23, 2022</time>
+                              </div>
+                              <h3 class="h3 blog-item-title">Design digest #80</h3>
+                              <p class="blog-text">
+                                 Excepteur sint occaecat cupidatat no proident, quis nostrum exercitationem ullam corporis suscipit.
+                              </p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="blog-post-item">
+                        <a href="#">
+                           <figure class="blog-banner-box">
+                              <img src="./assets/images/blog-4.jpg" alt="UI interactions of the week" loading="lazy">
+                           </figure>
+                           <div class="blog-content">
+                              <div class="blog-meta">
+                                 <p class="blog-category">Design</p>
+                                 <span class="dot"></span>
+                                 <time datetime="2022-02-23">Fab 23, 2022</time>
+                              </div>
+                              <h3 class="h3 blog-item-title">UI interactions of the week</h3>
+                              <p class="blog-text">
+                                 Enim ad minim veniam, consectetur adipiscing elit, quis nostrud exercitation ullamco laboris nisi.
+                              </p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="blog-post-item">
+                        <a href="#">
+                           <figure class="blog-banner-box">
+                              <img src="./assets/images/blog-5.jpg" alt="The forgotten art of spacing" loading="lazy">
+                           </figure>
+                           <div class="blog-content">
+                              <div class="blog-meta">
+                                 <p class="blog-category">Design</p>
+                                 <span class="dot"></span>
+                                 <time datetime="2022-02-23">Fab 23, 2022</time>
+                              </div>
+                              <h3 class="h3 blog-item-title">The forgotten art of spacing</h3>
+                              <p class="blog-text">
+                                 Maxime placeat, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                              </p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="blog-post-item">
+                        <a href="#">
+                           <figure class="blog-banner-box">
+                              <img src="./assets/images/blog-6.jpg" alt="Design digest #79" loading="lazy">
+                           </figure>
+                           <div class="blog-content">
+                              <div class="blog-meta">
+                                 <p class="blog-category">Design</p>
+                                 <span class="dot"></span>
+                                 <time datetime="2022-02-23">Fab 23, 2022</time>
+                              </div>
+                              <h3 class="h3 blog-item-title">Design digest #79</h3>
+                              <p class="blog-text">
+                                 Optio cumque nihil impedit uo minus quod maxime placeat, velit esse cillum.
+                              </p>
+                           </div>
+                        </a>
+                     </li>
+                  </ul>
+               </section>
+            </article>
+            <!--
+               - #CONTACT
+               -->
+            <article class="contact" data-page="contact" id="contact-section">
+               <header>
+                  <h2 class="h2 article-title">Contact</h2>
+               </header>
+               <section class="mapbox" data-mapbox>
+                  <figure>
+                     <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2952.064385571318!2d-83.74078202352504!3d42.27714894033527!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x883cae38e7de1701%3A0x5ba14e5178e997e3!2sUniversity%20of%20Michigan!5e0!3m2!1sen!2sus!4v1707934106200!5m2!1sen!2sus"
+                        width="400" height="300" loading="lazy"></iframe>
                   </figure>
-
-                  <h4 class="h4 testimonials-item-title" data-testimonials-title>Melodeye</h4>
-
-                  <div class="testimonials-text" data-testimonials-text>
-                      <p>
-                        Developed Melodeye, a native mobile app that leverages GPT-4o’s image analysis and the Spotify API 
-                        to dynamically generate user playlists based on the contents of an image.
-                        Utilized React Native for the frontend, Node.js/Express for the backend, and AWS for deployment.                        
-
-                      </p>
-                      <br>
-                      <time datetime="2021-06-14"> C++, Natural Language Processing, Binary Search Trees, Maps</time>
-
-                  </div>
-
-              </div>
-          </li>
-              <li class="testimonials-item">
-                  <div class="content-card" data-testimonials-item>
-
-                      <figure class="testimonials-avatar-box">
-                          <img src="./assets/images/project icons/piazza post classifier.png" alt="NLP Piazza Post Classifier" width="60" data-testimonials-avatar>
-                      </figure>
-
-                      <h4 class="h4 testimonials-item-title" data-testimonials-title>Piazza Post Classifier</h4>
-
-                      <div class="testimonials-text" data-testimonials-text>
-                          <p>
-                              Used machine learning and natural language processing (NLP) concepts to automatically identify
-                              the subject of Piazza posts. Utilized binary search trees and maps for data management.
-                              Recursive algorithms were implemented for classification to enhance the accuracy of subject
-                              identification.
-
-                          </p>
-                          <br>
-                          <time datetime="2021-06-14"> C++, Natural Language Processing, Binary Search Trees, Maps</time>
-
-                      </div>
-
-                  </div>
-              </li>
-              <li class="testimonials-item">
-                  <div class="content-card" data-testimonials-item>
-
-                      <figure class="testimonials-avatar-box">
-                          <img src="./assets/images/project icons/euchre.webp" alt="Euchre Simulation" width="60" data-testimonials-avatar>
-                      </figure>
-
-                      <h4 class="h4 testimonials-item-title" data-testimonials-title>Euchre Simulation</h4>
-
-                      <div class="testimonials-text" data-testimonials-text>
-                          <p>
-
-                              Developed a Euchre game simulation in C++ employing Object-Oriented Programming principles, 
-                              focusing on ADTs, inheritance, and polymorphism. Utilized data structures such as vectors for
-                              card and player management, and implemented algorithms including a variant of the riffle shuffle
-                              for deck preparation and a strategy algorithm for AI player decisions.
-
-                          </p>
-                          <br>
-                          <time datetime="2021-06-14"> C++, OOP, ADTs, Dynamic Memory Allocation, Polymorphism</time>
-
-                      </div>
-
-                  </div>
-              </li>
-              <li class="testimonials-item">
-                  <div class="content-card" data-testimonials-item>
-
-                      <figure class="testimonials-avatar-box">
-                          <img src="./assets/images/project icons/image resizer.png" alt="Seam-Carving Image Resizer" width="60" data-testimonials-avatar>
-                      </figure>
-
-                      <h4 class="h4 testimonials-item-title" data-testimonials-title>Image Resizer</h4>
-
-                      <div class="testimonials-text" data-testimonials-text>
-                          <p>
-                              Developed a content-aware image resizing program using the seam-carving algorithm.
-                              The program identifies and removes less significant seams from images for resizing,
-                              abstract data types and dynamic memory allocation and manipulation.
-
-
-
-                          </p>
-                          <br>
-                          <time datetime="2021-06-14">C++, Computer Vision, Seam Carivng, Dynamic memory management</time>
-
-                      </div>
-
-                  </div>
-              </li>
-
-              <li class="testimonials-item">
-                  <div class="content-card" data-testimonials-item>
-
-                      <figure class="testimonials-avatar-box">
-                          <img src="./assets/images/project icons/space invaders.png" alt="Arduino Space Invaders" width="60" data-testimonials-avatar>
-                      </figure>
-
-                      <h4 class="h4 testimonials-item-title" data-testimonials-title>Arduino Space Invaders</h4>
-                      <div class="testimonials-text" data-testimonials-text>
-                          <p>
-                              Worked with an Arduino Uno to program LED displays for creating graphical representations of Space Invaders.
-                              By reading inputs from a potentiometer and a button, updates were made to an LED screen output, allowing players
-                              to manage and manipulate the game state in real-time.
-                          </p>
-                          <br>
-                          <time datetime="2021-06-14"> C++, Arduino Uno, Embedded Systems</time>
-
-                      </div>
-
-                  </div>
-              </li>
-
-          </ul>
-
-        </section>
-
-
-        <!--
-          - testimonials modal
-        -->
-
-        <div class="modal-container" data-modal-container>
-
-          <div class="overlay" data-overlay></div>
-
-          <section class="testimonials-modal">
-
-            <button class="modal-close-btn" data-modal-close-btn>
-              <ion-icon name="close-outline"></ion-icon>
-            </button>
-
-            <div class="modal-img-wrapper">
-              <figure class="modal-avatar-box">
-                <img sr*c="./assets/images/avatar-1.png" alt="Arduino Project" width="80" data-modal-img>
-              </figure>
-
-             
-            </div>
-
-            <div class="modal-content">
-
-              <h4 class="h3 modal-title" data-modal-title></h4>
-              
-
-              <div data-modal-text>
-                <p>
-                  
-                </p>
-              </div>
-
-            </div>
-
-          </section>
-
-        </div>
-
-
-        <!--
-          - clients
-        -->
-
-
-
-      </article>
-
-
-
-
-
+               </section>
+               <section class="contact-form">
+                  <h3 class="h3 form-title">Contact Form</h3>
+                  <form action="https://formspree.io/f/xleqbbqd" method="POST" class="form" id="contact-form">
+                     <div class="input-wrapper">
+                        <input type="text" name="fullname" class="form-input" placeholder="Full name" required id="fullname">
+                        <input type="email" name="email" class="form-input" placeholder="Email address" required id="email">
+                     </div>
+                     <textarea name="message" class="form-input" placeholder="Your Message" required id="message"></textarea>
+                     <button class="form-btn" type="submit">
+                        <ion-icon name="paper-plane"></ion-icon>
+                        <span>Send Message</span>
+                     </button>
+                  </form>
+               </section>
+            </article>
+         </div>
+      </main>
       <!--
-        - #RESUME
-      -->
-
-      <article class="resume" data-page="resume">
-
-        <header>
-          <h2 class="h2 article-title">Resume</h2>
-        </header>
-
-        <section class="timeline">
-
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
-            </div>
-
-            <h3 class="h3">Education</h3>
-          </div>
-
-          <ol class="timeline-list">
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">University of Michigan, College <span style="text-transform: lowercase; font-weight: bold; display: inline; color: rgb(227,223,217);">of</span> LSA</h4>
-              <span>2023 — 2026</span>
-
-              <!-- <p class="timeline-text">
-                GPA: 3.8/4.0
-              </p> -->
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Mountain View High School</h4>
-
-              <span>2019 — 2023</span>
-
-              <!-- <p class="timeline-text">
-                Ratione voluptatem sequi nesciunt, facere quisquams facere menda ossimus, omnis voluptas assumenda est
-                omnis..
-              </p> -->
-
-            </li>
-
-          </ol>
-
-        </section>
-
-        <section class="timeline">
-
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="star-outline"></ion-icon>
-            </div>
-
-            <h3 class="h3">Relevant Experience</h3>
-          </div>
-
-          <ol class="timeline-list">
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">University of Tokyo
-                <span style="color: rgb(255, 255, 255); font-weight: normal; display: inline;"> | </span> 
-                <span style="font-weight: normal; display: inline; color: white">Research Intern</span></h4>
-              </h4>
-
-              <span>July & August 2024</span>
-
-              <p class="timeline-text">
-                • Enhanced the study 'CycleGAN-based Realistic Image Dataset Generation for Forward-Looking 
-                Sonar' by proposing and implementing CUT over CycleGAN, achieving faster training and 
-                enhancing simulated sonar images into realistic representations.<br>
-                • Developed a data visualization tool for ショッカクシューズ (Shokakku Shoes) using Python,
-                Pandas, Dash (Plotly), and Batch scripting.
-              </p>
-
-            </li>
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Study Tools at MVHS Club
-                <span style="color: white; font-weight: normal; display: inline;"> | </span> 
-                <span style="font-weight: normal; display: inline; color: white">President</span></h4>
-              </h4>
-
-              <span>Oct. 2021 - June 2023</span>
-
-              <p class="timeline-text">
-                • Collaborated with a team of 5 to uniquely brand and develop a multi-subject, full stack Javascript 
-                study program and released it to the student body.<br>
-                • Formed and instructed an elementary school Scratch tutoring team. Conducted instructional and 
-                tutoring workshops.
-                
-              </p>
-
-            </li>
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Jr. Java Programming Intern
-                <span style="color: white; font-weight: normal; display: inline;"> | </span> 
-                <span style="font-weight: normal; display: inline; color: white">Assistant Teacher</span></h4>
-              </h4>
-
-              <span>June - July 2019</span>
-
-              <p class="timeline-text">
-                • Facilitated comprehensive instruction in Java, imparting essential concepts and expert 
-                debugging strategies for class projects.
-                <br>
-                • Addressed homework and classwork inquiries from students, propelling academic
-                growth and success in class.
-                
-              </p>
-
-            </li>
-
-          </ol>
-
-        </section>
-        <section class="timeline">
-
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="person-outline"></ion-icon>
-            </div>
-
-            <h3 class="h3">Leadership Experience</h3>
-          </div>
-
-          <ol class="timeline-list">
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">ACTIN Nonprofit
-                <span style="color: white; font-weight: normal; display: inline;"> | </span> 
-                <span style="font-weight: normal; display: inline; color: white">Founder & CEO</span></h4>
-
-              <span>2019 - Present</span>
-
-              <p class="timeline-text">
-                • Implemented expertise in computer building to bridge the technology gap in the Bay Area, aiding 
-                underprivileged families in leveraging technology.<br>
-                • Generated $10,000+ in funds through diverse outreach campaigns.<br>
-                • Coordinated charity drive, collecting surplus mobile phones and tablets for donation. 
-              </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Anywhere 3D
-                <span style="color: white; font-weight: normal; display: inline;"> | </span> 
-                <span style="font-weight: normal; display: inline; color: white">Co-Founder</span></h4>
-
-              <span>June & July 2022</span>
-
-              <p class="timeline-text">
-                • Co-founded a startup and democratized 3D printing access nationally, aided underfunded high 
-                school robotics teams with access to high-quality 3D printers.<br>
-                • Headed website creation, marketing, and collaborative initiatives with other businesses.           
-              </p>
-
-            </li>
-          </ol>
-
-        </section>
-        <section class="timeline">
-
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="telescope-outline"></ion-icon>
-            </div>
-
-            <h3 class="h3">Additional Experiences</h3>
-          </div>
-
-          <ol class="timeline-list">
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">YouTube, Instagram, TikTok Creator
-                <span style="color: white; font-weight: normal; display: inline;"> | </span> 
-                <span style="font-weight: normal; display: inline; color: white">Founder</span></h4>
-              </h4>
-
-              <span>2021 - Present</span>
-
-              <p class="timeline-text">
-                • Established a unique brand and cultivated 90M+ views and 130K+ followers across various social
-                media platforms. <br>
-                • Mastered media applications like Premiere Pro, After Effects, and Photoshop.
-                
-              </p>
-
-            </li>
-
-          </ol>
-
-        </section>
-        <section class="clients">
-
-          <h3 class="h3 clients-title">Skills</h3>
-
-          <ul class="clients-list has-scrollbar">
-          <li class="clients-item">
-            <a>
-              <div class="clients-overlay-container">
-                <img src="./assets/images/gitlogo.png" alt="git">
-                <div class="overlay-text">Git</div> <!-- The text you want to display on hover -->
-              </div>
-            </a>
-          </li>
-            <li class="clients-item">
-              <a>
-                <div class="clients-overlay-container">
-                  <img src="./assets/images/reactlogo.png" alt="react">
-                  <div class="overlay-text">React</div> <!-- The text you want to display on hover -->
-                </div>
-              </a>
-            </li>
-            <li class="clients-item">
-              <a>
-                <div class="clients-overlay-container">
-                  <img src="./assets/images/nodejslogo.png" alt="css">
-                  <div class="overlay-text">Node.js</div> <!-- The text you want to display on hover -->
-                </div>
-              </a>
-            </li>
-            <li class="clients-item">
-              <a>
-                <div class="clients-overlay-container">
-                  <img src="./assets/images/pandaslogo.png" alt="css">
-                  <div class="overlay-text">Pandas</div> <!-- The text you want to display on hover -->
-                </div>
-              </a>
-            </li>
-            <li class="clients-item">
-              <a>
-                <div class="clients-overlay-container">
-                  <img src="./assets/images/awslogo.png" alt="css">
-                  <div class="overlay-text">AWS</div> <!-- The text you want to display on hover -->
-                </div>
-              </a>
-            </li>
-            <li class="clients-item">
-            <a>
-              <div class="clients-overlay-container">
-                <img src="./assets/images/typescriptlogo.png" alt="typescript">
-                <div class="overlay-text">Typescript</div> <!-- The text you want to display on hover -->
-              </div>
-            </a>
-            </li>
-            <li class="clients-item">
-              <a>
-                <div class="clients-overlay-container">
-                  <img src="./assets/images/jslogo.png" alt="javascript">
-                  <div class="overlay-text">Javascript</div> <!-- The text you want to display on hover -->
-                </div>
-              </a>
-            </li>
-            <li class="clients-item">
-              <a>
-                <div class="clients-overlay-container">
-                  <img src="./assets/images/htmllogo.png" alt="html">
-                  <div class="overlay-text">HTML</div> <!-- The text you want to display on hover -->
-                </div>
-              </a>
-            </li>
-            <li class="clients-item">
-              <a>
-                <div class="clients-overlay-container">
-                  <img src="./assets/images/csslogo.png" alt="css">
-                  <div class="overlay-text">CSS</div> <!-- The text you want to display on hover -->
-                </div>
-              </a>
-            </li>
-
-            <li class="clients-item">
-              <a>
-                <div class="clients-overlay-container">
-                  <img src="./assets/images/pythonlogo.png" alt="python">
-                  <div class="overlay-text">Python</div> <!-- The text you want to display on hover -->
-                </div>
-              </a>
-            </li>
-            <li class="clients-item">
-              <a>
-                <div class="clients-overlay-container">
-                  <img src="./assets/images/c++logo.png" alt="c++">
-                  <div class="overlay-text">C++</div> <!-- The text you want to display on hover -->
-                </div>
-              </a>
-            </li>
-            <li class="clients-item">
-              <a>
-                <div class="clients-overlay-container">
-                  <img src="./assets/images/javalogo.png" alt="java">
-                  <div class="overlay-text">Java</div> <!-- The text you want to display on hover -->
-                </div>
-              </a>
-            </li>
-            <li class="clients-item">
-              <a>
-                <div class="clients-overlay-container">
-                  <img src="./assets/images/mongodblogo.png" alt="mongodb">
-                  <div class="overlay-text">MongoDB</div> <!-- The text you want to display on hover -->
-                </div>
-              </a>
-            </li>
-            <li class="clients-item">
-              <a>
-                <div class="clients-overlay-container">
-                  <img src="./assets/images/blenderlogo.png" alt="blender">
-                  <div class="overlay-text">Blender</div> <!-- The text you want to display on hover -->
-                </div>
-              </a>
-            </li>
-            <li class="clients-item">
-              <a>
-                <div class="clients-overlay-container">
-                  <img src="./assets/images/after effects.png" alt="after effects">
-                  <div class="overlay-text">After Effects</div> <!-- The text you want to display on hover -->
-                </div>
-              </a>
-            </li>
-            <li class="clients-item">
-              <a>
-                <div class="clients-overlay-container">
-                  <img src="./assets/images/premiere pro.png" alt="premiere pro">
-                  <div class="overlay-text">Premiere Pro</div> <!-- The text you want to display on hover -->
-                </div>
-              </a>
-            </li>
-            <li class="clients-item">
-              <a>
-                <div class="clients-overlay-container">
-                  <img src="./assets/images/photoshop.png" alt="photoshop">
-                  <div class="overlay-text">Photoshop</div> <!-- The text you want to display on hover -->
-                </div>
-              </a>
-            </li>
-            
-          </ul>
-
-        </section>
-        <section class="skill">
-
-          <h3 class="h3 skills-title">Languages</h3>
-
-          <ul class="skills-list content-card">
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">English</h5>
-                <data value="100">(Native)</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 100%;"></div>
-              </div>
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Japanese</h5>
-                <data value="90">(N2/N1)</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 90%;"></div>
-              </div>
-
-            </li>
-
-
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Spanish</h5>
-                <data value="65">(B2)</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 65%;"></div>
-              </div>
-
-            </li>
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Chinese</h5>
-                <data value="83">(HSK 2)</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 23%;"></div>
-              </div>
-
-            </li>
-
-            <!-- <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Tagalog</h5>
-                <data value="15">(A1)</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 15%;"></div>
-              </div>
-
-            </li> -->
-          </ul>
-
-        </section>
-
-      </article>
-
-
-
-
-
+         - custom js link
+         -->
+      <script src="./assets/js/script.js"></script>
       <!--
-        - #PORTFOLIO
-      -->
-
-      <article class="portfolio" data-page="portfolio">
-
-        <header>
-          <h2 class="h2 article-title">Projects</h2>
-        </header>
-
-        <section class="projects">
-<!-- 
-          <ul class="filter-list">
-
-            <li class="filter-item">
-              <button class="active" data-filter-btn>All</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Web design</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Applications</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Web development</button>
-            </li>
-
-          </ul> -->
-
-          <!-- <div class="filter-select-box">
-
-            <button class="filter-select" data-select>
-
-              <div class="select-value" data-selecct-value>Select category</div>
-
-              <div class="select-icon">
-                <ion-icon name="chevron-down"></ion-icon>
-              </div>
-
-            </button>
-
-          </div> -->
-
-          <ul class="project-list">
-            <li class="project-item active" data-project-url="Hello! I am interested in using Melodeye, would you be able to provide me with a link?" data-filter-item data-category="web development">
-              <a href="#">
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./assets/images/project icons/melodeye large.png" alt="finance" loading="lazy">
-                </figure>
-                <h3 class="project-title">Melodeye</h3>
-                <p class="project-category"></p>
-                <p class="project-description">Developed Melodeye, a native mobile app that leverages GPT-4o’s image analysis and the Spotify API to dynamically generate user playlists based on the contents of an image. Utilized React Native for the frontend, Node.js/Express for the backend, and AWS for deployment.</p>
-                <p class="skillsbuffer"></p>
-                <i class="project-skills">TypeScript, React Native, Node.js/Express, AWS</i>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-project-url="Hello! I am interested in viewing your Piazza Post Classifier project." data-filter-item data-category="web development">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project icons/piazza post classifier large.png" alt="finance" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Piazza Post Classifier</h3>
-
-                <p class="project-category"></p>
-                <p class="project-description">Used machine learning and natural language processing (NLP) concepts to 
-                  automatically identify the subject of Piazza posts. Utilized binary search trees and maps for data 
-                  management. Recursive algorithms were implemented for classification to enhance the accuracy of 
-                  subject identification. 
-                
-                </p>
-                <p class="skillsbuffer"></p>
-                <i class="project-skills">C++, Natural Language Processing, Binary Search Trees, Maps</i>
-              </a>
-            </li>
-
-            <li class="project-item  active" data-project-url="Hello! I am interested in viewing your Euchre Simulation." data-filter-item data-category="web development">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project icons/euchre large.png" alt="finance" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Euchre Simulation</h3>
-
-                <p class="project-category"></p>
-                <p class="project-description">Developed a Euchre game simulation in C++ employing Object-Oriented Programming principles, 
-                  focusing on ADTs, inheritance, and polymorphism. Utilized data structures such as vectors for card and player management, 
-                  and implemented a riffle shuffle algorithm for deck preparation and a strategy algorithm for AI player decisions.
-                </p>
-                <p class="skillsbuffer"></p>
-                <i class="project-skills">C++, OOP, ADTs, Dynamic Memory Allocation</i>
-              </a>
-            </li>
-
-            <li class="project-item  active" data-project-url="Hello! I am interested in viewing your Image Resizer project." data-filter-item data-category="web development">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project icons/image resizer large.png" alt="finance" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Image Resizer</h3>
-
-                <p class="project-category"></p>
-                <p class="project-description">Developed a content-aware image resizing program using the seam-carving algorithm. 
-                  The program identifies and removes less significant seams from images for resizing, abstract data types and 
-                  dynamic memory allocation and manipulation.
-                
-                </p>
-                <p class="skillsbuffer"></p>
-                <i class="project-skills">C++, Computer Vision, Seam Carving, Dynamic Memory Management</i>
-              </a>
-            </li>
-
-            <li class="project-item  active" data-project-url="Hello! I am interested in viewing your Arduino Space Invaders project." data-filter-item data-category="web development">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project icons/space invaders large.png" alt="finance" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Arduino Space Invaders</h3>
-
-                <p class="project-category"></p>
-                <p class="project-description">Worked with an Arduino Uno to program LED displays for creating graphical 
-                  representations of Space Invaders. By reading inputs from a potentiometer and a button, updates were 
-                  made to an LED screen output, allowing players to manage and manipulate the game state in real-time.
-                
-                </p>
-                <p class="skillsbuffer"></p>
-                <i class="project-skills">C++, Arduino Uno, Embedded Systems</i>
-              </a>
-            </li>
-          </ul>
-
-        </section>
-
-      </article>
-
-    <!-- project modal -->
-    <div class="project-modal-container" data-project-modal-container>
-      <div class="project-overlay" data-project-overlay></div>
-      <section class="project-modal">
-        <button class="project-modal-close-btn" data-project-modal-close-btn>
-          <ion-icon name="close-outline"></ion-icon>
-        </button>
-        <div class="modal-img-wrapper">
-          <figure class="project-avatar-box">
-            <img src="./assets/images/project-placeholder.png" alt="Project Image" width="80" data-project-modal-img>
-          </figure>
-        </div>
-        <div class="project-modal-content">
-          <h3 class="h3 modal-title" data-project-modal-title></h3>
-          <br>
-          <div data-project-modal-text>
-            <p></p>
-          </div>
-        </div>
-      </section>
-    </div>
-    
-
-
-
-      <!--
-        - #BLOG
-      -->
-
-      <article class="blog" data-page="blog">
-
-        <header>
-          <h2 class="h2 article-title">Blog</h2>
-        </header>
-
-        <section class="blog-posts">
-
-          <ul class="blog-posts-list">
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-1.jpg" alt="Design conferences in 2022" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Design conferences in 2022</h3>
-
-                  <p class="blog-text">
-                    Veritatis et quasi architecto beatae vitae dicta sunt, explicabo.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-2.jpg" alt="Best fonts every designer" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Best fonts every designer</h3>
-
-                  <p class="blog-text">
-                    Sed ut perspiciatis, nam libero tempore, cum soluta nobis est eligendi.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-3.jpg" alt="Design digest #80" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Design digest #80</h3>
-
-                  <p class="blog-text">
-                    Excepteur sint occaecat cupidatat no proident, quis nostrum exercitationem ullam corporis suscipit.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-4.jpg" alt="UI interactions of the week" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">UI interactions of the week</h3>
-
-                  <p class="blog-text">
-                    Enim ad minim veniam, consectetur adipiscing elit, quis nostrud exercitation ullamco laboris nisi.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-5.jpg" alt="The forgotten art of spacing" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">The forgotten art of spacing</h3>
-
-                  <p class="blog-text">
-                    Maxime placeat, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-6.jpg" alt="Design digest #79" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Design digest #79</h3>
-
-                  <p class="blog-text">
-                    Optio cumque nihil impedit uo minus quod maxime placeat, velit esse cillum.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-          </ul>
-
-        </section>
-
-      </article>
-
-
-
-
-
-      <!--
-        - #CONTACT
-      -->
-
-      <article class="contact" data-page="contact" id="contact-section">
-        <header>
-          <h2 class="h2 article-title">Contact</h2>
-        </header>
-        <section class="mapbox" data-mapbox>
-          <figure>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2952.064385571318!2d-83.74078202352504!3d42.27714894033527!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x883cae38e7de1701%3A0x5ba14e5178e997e3!2sUniversity%20of%20Michigan!5e0!3m2!1sen!2sus!4v1707934106200!5m2!1sen!2sus"
-              width="400" height="300" loading="lazy"></iframe>
-          </figure>
-        </section>
-        <section class="contact-form">
-          <h3 class="h3 form-title">Contact Form</h3>
-          <form action="https://formspree.io/f/xleqbbqd" method="POST" class="form" id="contact-form">
-            <div class="input-wrapper">
-              <input type="text" name="fullname" class="form-input" placeholder="Full name" required id="fullname">
-              <input type="email" name="email" class="form-input" placeholder="Email address" required id="email">
-            </div>
-            <textarea name="message" class="form-input" placeholder="Your Message" required id="message"></textarea>
-            <button class="form-btn" type="submit">
-              <ion-icon name="paper-plane"></ion-icon>
-              <span>Send Message</span>
-            </button>
-          </form>
-        </section>
-      </article>
-
-    </div>
-
-  </main>
-
-
-
-
-
-
-  <!--
-    - custom js link
-  -->
-  <script src="./assets/js/script.js"></script>
-
-  <!--
-    - ionicon link
-  -->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
-</body>
-
+         - ionicon link
+         -->
+      <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+      <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+   </body>
 </html>
