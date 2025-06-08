@@ -2095,6 +2095,7 @@ textarea.form-input::-webkit-resizer { display: none; }
   max-width: 600px;
   height: auto;
   border-radius: 10%;
+  overflow: hidden;
   margin-top: 10px;
   margin-bottom: 35px;
   padding: 10px;
